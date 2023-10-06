@@ -1,0 +1,136 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* position: fixed;
+    top: 0; */
+}
+
+
+nav .logo img{
+    margin-left: 20px;
+    width: 100px;
+}
+
+nav .text{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav .text img{
+    width: 75px;
+}
+
+
+
+
+.body{
+    display: flex;
+}
+
+
+.SideContainer {
+    width: 20%;
+    height: 90vh;
+    background-color: rgb(255, 227, 67);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SideContainer .ElementContainer{
+    height: 50%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.SideContainer .ElementContainer a{
+    color: rgb(95, 95, 95);
+    padding: 10px 15px;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.SideContainer .ElementContainer a:hover{
+    background-color: aliceblue;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.SideContainer .ElementContainer a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.SideContainer .ElementContainer a img{
+    width: 35px;
+}
+
+
+
+
+
+.MainContainer{
+    width: 80%;
+    height: 90vh;
+    background-color: aliceblue;
+}
+
+.MainContainer .dashboard{
+    margin: 25px 30px;
+}
+
+.MainContainer .dashboard .CardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 15px;
+}
+
+.MainContainer .dashboard .CardContainer .Card{
+    width: 20%;
+    padding: 30px 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+    background: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.355);
+}
+
+.MainContainer .dashboard .CardContainer .Card .image img{
+    width: 50px;
+}
+
+.MainContainer .dashboard .CardContainer .Card .text{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.MainContainer .dashboard .CardContainer .Card .count{
+    font-size: 2em;
+    font-weight: 400;
+    align-self: flex-end;
+}

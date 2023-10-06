@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    color: #eee;
+}
+
+.prefContainder {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: space-around;
+    margin: 150px;
+    /* margin-bottom: 150px; */
+}
+
+
+.profForm {
+    padding: 15px 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.prefUserInfo h4 {
+    margin-top: -1px;
+}
+
+.prefLeftContainer {
+    border: none;
+    text-align: center;
+    align-items: center;
+    flex-basis: 40%;
+    background-color: #ffd24d;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.prefLeft {
+    color: black;
+    font-size: large;
+    border: none;
+    flex-basis: 40%;
+    margin: 80px 30px;
+}
+
+.prefRightContainer {
+    border: none;
+    flex-basis: 60%;
+    border: 2px solid #ffd24d;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.prefRight{
+    margin: 20px 0;
+}
+
+.input {
+    /* margin-top: -10px; */
+    background-color: #c7c7c7;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 10px;
+}
+
+.otherInfo {
+    margin-top: 90px;
+}
+
+.prefRightBtns{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.prefRightBtn{
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+.prefRightBtn:hover{
+    border: none;
+    background-color:#ffd24d ;
+    color: black;
+}
+
+.prefUserInfo img{
+    width:50%
+}

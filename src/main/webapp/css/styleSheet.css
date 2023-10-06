@@ -1,0 +1,204 @@
+@import url(https://db.onlinewebfonts.com/c/313734933c40204493b2887a73bd2296?family=Cavilant);
+@import url(https://fonts.cdnfonts.com/css/leky-calgria);
+@import url(https://fonts.cdnfonts.com/css/falling-sky);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Montserrat';
+}
+
+/* 1b1a17 */
+
+/*to change the darkness of the backgroun*/
+
+
+/* ----------------------------------------- */
+
+
+.logo {
+    margin-left: 100px;
+}
+
+.header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 650px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-family: "leky calgria";
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+.header p {
+    text-align: center;
+    font-size: 15px;
+    font-family: "falling sky";
+}
+
+button {
+    z-index: 1;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: "Cavilant";
+    font-size: small;
+    width: 150px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid #ffd24d;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.header div button span {
+    background: #ffd24d;
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.3s;
+
+}
+
+.header div button:hover span {
+    width: 100%;
+}
+
+.header div button:hover {
+    border: none;
+}
+
+
+.CardSection {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CardSection .CardContainer {
+    /* background-color: #1b1a17; */
+    border-top: #ffffff solid 1px;
+    border-bottom: #ffffff solid 1px;
+    padding: 50px 0;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CardSection .CardContainer .card {
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed; */
+
+    /* background: transparent; */
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 350px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.CardSection .CardContainer .card:nth-child(1) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(20, 20, 20, 0.6));
+}
+
+.CardSection .CardContainer .card:nth-child(2) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(20, 20, 20, 0.6));
+}
+
+.CardSection .CardContainer .card:nth-child(3) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(20, 20, 20, 0.6));
+}
+
+.CardSection .CardContainer .card .title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+}
+
+.CardSection .CardContainer .card .count {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+
+
+
+.WhatWeDo {
+    padding: 0px 0 100px 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.WhatWeDo p {
+    font-family: "Cavilant";
+    font-size: 3.6em;
+    font-weight: 900;
+}
+
+.WhatWeDo .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.WhatWeDo .container .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    gap: 10px;
+}
+
+.WhatWeDo .container .service .icon img {
+    width: 100px;
+}
+
+.WhatWeDo .container .service .title {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+
+
+
+.something2 {
+    height: 500px;
+}

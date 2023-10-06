@@ -1,0 +1,81 @@
+@import url(https://db.onlinewebfonts.com/c/313734933c40204493b2887a73bd2296?family=Cavilant);
+@import url(https://fonts.cdnfonts.com/css/leky-calgria);
+@import url(https://fonts.cdnfonts.com/css/falling-sky);
+
+.container{
+    background-color: #1b1a17;
+
+}
+.list-containder {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 200px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:50px
+}
+
+.house{
+    /* padding: 25px 35px; */
+    border-bottom: 1px solid #ccc;
+    width: 35%;
+}
+
+.list-containder .house:last-child , .list-containder .house:nth-last-child(2){
+    border-bottom: 0px;
+}
+
+.house-img img{
+    width: 100%;
+}
+
+.house-info{
+    color: #ccc;
+}
+
+.house-info h3{
+    font-weight: 600;
+    color:#ccc;
+    font-size: 22px;
+}
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    color: #eee;
+}
+
+.pagination img{
+    width:15px;
+    margin:10px 20px;
+}
+
+.rArr{
+    transform: rotate(180deg);
+}
+
+.pagination span{
+    margin: 10px 8px;
+    width:40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: smaller;
+}
