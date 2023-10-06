@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="PropertyManagementSystem.User" %>
+<%@ page import="com.PropertyManagementSystem.User" %>
 
 <div class="navbar">
     <img src="images/logo.png" class="logo">
@@ -22,7 +22,7 @@
             <div class="dropdown-content">
                 <a href="preferences.jsp">Preferences</a>
                 <a href="#">My Properties</a>
-                <a href="#">Log Out</a>
+                <a href="Logout">Log Out</a>
             </div>
         </li>
         <% } %>

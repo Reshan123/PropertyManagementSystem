@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+
+<% String error = (String) session.getAttribute("errorLogIn"); %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +28,17 @@
   
 <div class="login-box">
 
-  <form action="login.php" method="post"> 
+  <form action="Login" method="post"> 
     <h2>Login</h2>
+    
+    <% if (error != null){ %>
+   		 <p style="color:red;text-align:center;font-size:1.5em"> 
+   		 <%= error %>
+   		 <% 
+	   		 session.setAttribute("errorLogIn" , null);
+   		 %>
+   		 </p>
+    <% } %>
     
     <div class="input-box">
       <input type="email"  id="email" name="email" required>
