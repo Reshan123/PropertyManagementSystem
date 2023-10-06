@@ -32,7 +32,7 @@
     <h2>Login</h2>
     
     <% if (error != null){ %>
-   		 <p style="color:red;text-align:center;font-size:1.5em"> 
+   		 <p style="color:red;text-align:center;font-size:1.5em;background:white;border-radius:5px"> 
    		 <%= error %>
    		 <% 
 	   		 session.setAttribute("errorLogIn" , null);

@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="com.PropertyManagementSystem.User" %>
+
+<%	
+	User userProfile = (User) session.getAttribute("user");
+	if (userProfile == null){
+		response.sendRedirect("login.jsp");
+		return;
+	}
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,13 +52,13 @@
 
                 <div class="profForm">
                     <h3>Username</h3>
-                    <input type="text" class="input" placeholder="username">
+                    <input type="text" class="input" placeholder="username" value=<%= userProfile.getUsername() %>>
                     <h3>Password</h3>
                     <input type="password" class="input" placeholder="password">
                     <h3>Confirm Password</h3>
                     <input type="password" class="input" placeholder="password">
                     <h3>Email</h3>
-                    <input type="e-mail" class="input" placeholder="email@example.com">
+                    <input type="e-mail" class="input" placeholder="email@example.com" value=<%= userProfile.getEmail() %>>
                 </div>
 
             </div>
