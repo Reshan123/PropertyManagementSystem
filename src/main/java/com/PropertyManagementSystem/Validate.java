@@ -78,6 +78,34 @@ public static User login(String email , String password) {
 		return null;
 		
 	}
+	
+	public static User update(int UID ,String username , String password , String email) {
+		
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
+			
+			Statement statementObj = conObj.createStatement();
+			String sql = "UPDATE users SET userName = '" + username + "', userPassword = '" + password + "' , email = '" + email +"' WHERE (UID = " + UID + ")";
+			
+			statementObj.execute(sql);
+			
+			User user = login(email , password);
+			return user;
+			
+		} catch (ClassNotFoundException e) {
+			
+			System.out.println("Something wrong with loading driver " + e.toString());
+			
+		} catch (SQLException e) {
+			
+			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
+			
+		}	
+		
+		return null;
+	}
 }
 
 

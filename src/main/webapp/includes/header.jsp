@@ -8,7 +8,7 @@
     <ul>
         <li class="navItem"><a href="index.jsp">Home</a> </li>
         <li class="navItem"><a href="#">About</a> </li>
-        <li class="navItem"><a href="contact.jsp">Contact</a> </li>
+        <li class="navItem"><a href="Contact">Contact</a> </li>
         <li class="navItem"><a href="listing.jsp">Properties</a> </li>
         <% 
 			User user = (User) session.getAttribute("user");

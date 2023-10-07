@@ -47,33 +47,33 @@
 
         </div>
 
-        <div class="prefRightContainer">
+        <form class="prefRightContainer" method="post" action="EditProfile">
             <div class="prefRight">
 
-                <div class="profForm">
+                <div class="profForm" >
                     <h3>Username</h3>
-                    <input type="text" class="input" placeholder="username" value=<%= userProfile.getUsername() %>>
-                    <h3>Password</h3>
-                    <input type="password" class="input" placeholder="password">
-                    <h3>Confirm Password</h3>
-                    <input type="password" class="input" placeholder="password">
+                    <input type="text" class="input" placeholder="username" name="username" value=<%= userProfile.getUsername() %>>
+                    <h3>New Password</h3>
+                    <input type="password" class="input" placeholder="password" name="passworddNew" id="pwd">
+                    <h3>Confirm New Password</h3>
+                    <input type="password" class="input" placeholder="password" id="confirmPwd" oninput="validate()">
                     <h3>Email</h3>
-                    <input type="e-mail" class="input" placeholder="email@example.com" value=<%= userProfile.getEmail() %>>
+                    <input type="e-mail" class="input" placeholder="email@example.com" name="email" value=<%= userProfile.getEmail() %>>
                 </div>
 
             </div>
             <div class="prefRightBtns">
                 <button class="prefRightBtn">Cancel</button>
-                <button class="prefRightBtn">Confirm</button>
+                <button class="prefRightBtn" type="submit">Confirm</button>
 
             </div>
-        </div>
+        </form>
 
     </div>
 
 
     <%@ include file="includes/footer.jsp" %>
-
+	<script src="js/confirmPassword.js"></script>
 
 
 </body>

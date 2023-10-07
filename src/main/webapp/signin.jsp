@@ -40,9 +40,9 @@
                     <label>Password</label>
                 </div>
 
-                <div class="input-box">
-                    <input type="password" id="passwordSConfirm" name="passwordSConfirm" required>
-                    <label>Confirm password</label>
+                <div class="input-box" id="input-box">
+                    <input type="password" id="passwordSConfirm" name="passwordSConfirm" required oninput="validateSignin()">
+                    <label id="input-lable">Confirm password</label>
                 </div>
 
                 <button name="sign" id="sign" class="logBtn">Sign Up</button>
@@ -55,7 +55,7 @@
 
 
     <%@ include file="includes/footer.jsp" %>
-
+	<script src="js/confirmPassword.js"></script>
 </body>
 
 </html>
