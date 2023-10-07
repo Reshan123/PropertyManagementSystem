@@ -24,7 +24,7 @@
     <section>
 
         <div class="login-box">
-            <form action="create.php" method="post">
+            <form action="Signin" method="post">
                 <h2>Sign Up</h2>
                 <div class="input-box">
                     <input type="text" id="username" name="username" required>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="input-box">
-                    <input type="passwordConfirm" id="passwordSConfirm" name="passwordSConfirm" required>
+                    <input type="password" id="passwordSConfirm" name="passwordSConfirm" required>
                     <label>Confirm password</label>
                 </div>
 
