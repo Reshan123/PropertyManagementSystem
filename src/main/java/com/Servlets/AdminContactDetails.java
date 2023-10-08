@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -57,10 +58,11 @@ public class AdminContactDetails extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-
-		HttpSession session = request.getSession();
-		session.setAttribute("AdminContactDetails", contact);
-		response.sendRedirect("adminContactDetails.jsp");
+		
+		request.setAttribute("AdminContactDetails", contact);
+		
+		RequestDispatcher reqDis = request.getRequestDispatcher("adminContactDetails.jsp");
+		reqDis.forward(request, response);
 	}
 
 }

@@ -19,7 +19,7 @@
                     <img src="images/icon/Legal.png" alt="">
                     Dashboard
                 </a>
-                <a href="#">
+                <a href="AdminUserDetails">
                     <img src="images/icon/Legal.png" alt="">
                     All Users
                 </a>
@@ -27,7 +27,7 @@
                     <img src="images/icon/Legal.png" alt="">
                     Properties
                 </a>
-                <a href="#">
+                <a href="AdminFeedback">
                     <img src="images/icon/Legal.png" alt="">
                     Feedback
                 </a>

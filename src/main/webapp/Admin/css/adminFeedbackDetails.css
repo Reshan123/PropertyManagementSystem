@@ -1,0 +1,41 @@
+table{
+	text-align: center;
+	border-collapse:separate;
+	border-spacing: 10px 25px;
+}
+
+
+table tr th , table tr td{
+	width: 15%;
+	padding-bottom: 15px;
+	border-bottom: 2px solid grey;
+}
+
+table tr th:last-child , table tr td:last-child{	
+	width: fit-content;
+	
+}
+
+table tr td:last-child{
+	padding: 0 10px;
+	text-align: justify;	
+}
+
+table tr:last-child > *{
+	border-bottom: none;
+}
+
+table tr th button{
+	padding: 10px 20px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+button{
+	cursor: pointer;
+	box-shadow: 2px 2px 2px  black;
+}
+
+button:active{
+	box-shadow: none;
+}

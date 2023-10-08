@@ -1,6 +1,8 @@
 table{
 	margin: 15px ;
 	text-align: center;
+	border-collapse:separate;
+	border-spacing: 10px 25px;
 }
 
 table tr td:nth-child(1){
@@ -10,19 +12,6 @@ table tr td:nth-child(1){
 
 table tr td:nth-child(2){
 	width: 10%;
-}
-
-
-table tr{
-	margin: 0 10px;
-}
-
-table tr th , table tr td{
-	border-right: 2px solid grey;
-}
-
-table tr th:last-child{	
-	border-right: none;
 }
 
 

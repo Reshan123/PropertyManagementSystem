@@ -4,7 +4,7 @@
 <%@ page import="com.PropertyManagementSystem.ContactDetails" %>
 
 <%
-	ContactDetails contact = (ContactDetails) session.getAttribute("contact");
+	ContactDetails contact = (ContactDetails) request.getAttribute("contact");
 	if (contact == null){
 		System.out.println("fked up contact jsp");
 	}
@@ -63,7 +63,7 @@
                         <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;">
                         <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;">
                     </div>
-                    <input type="email" name="Email address" placeholder="Your Eamil Adress" required style="color:white;">
+                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;">
                     <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
                     <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
                 </form>

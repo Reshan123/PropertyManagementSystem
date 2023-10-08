@@ -5,7 +5,7 @@
 <%@ page import="com.PropertyManagementSystem.ContactDetails" %>
 
 <%
-	ContactDetails contact = (ContactDetails) session.getAttribute("AdminContactDetails");
+	ContactDetails contact = (ContactDetails) request.getAttribute("AdminContactDetails");
 %>
 
 <!DOCTYPE html>

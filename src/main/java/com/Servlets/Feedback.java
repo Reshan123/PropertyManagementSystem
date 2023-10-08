@@ -3,31 +3,31 @@ package com.Servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.PropertyManagementSystem.ContactDetails;
 
-@WebServlet("/Contact")
-public class Contact extends HttpServlet {
+
+@WebServlet("/Feedback")
+public class Feedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
 	static String DBusername = "root";
 	static String DBpassword = "";
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ContactDetails contact = null;
+		String firstName = request.getParameter("fName");
+		String lastName = request.getParameter("lName");
+		String Email = request.getParameter("Email");
+		String message = request.getParameter("message");
 		
 		try {
 			
@@ -35,19 +35,9 @@ public class Contact extends HttpServlet {
 			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
 			
 			Statement statementObj = conObj.createStatement();
-			String sql = "SELECT * FROM contact";
+			String sql = "INSERT INTO feedback (Fname , Lname , Email , Message ) VALUES ('"+firstName+"','"+lastName+"','"+Email+"', \" "+message+" \" )";
 			
-			ResultSet resultSetObj = statementObj.executeQuery(sql);
-			
-			if(resultSetObj.next()) {
-				int ContactID = resultSetObj.getInt(1);
-				String Description = resultSetObj.getString(2);
-				String Phone = resultSetObj.getString(3);
-				String Email = resultSetObj.getString(4);
-				String Address = resultSetObj.getString(5);
-				
-				contact = new ContactDetails(ContactID,Description,Phone,Email,Address);
-			}
+			statementObj.execute(sql);
 			
 		} catch (ClassNotFoundException e) {
 			
@@ -59,10 +49,8 @@ public class Contact extends HttpServlet {
 			
 		}
 		
-		request.setAttribute("contact", contact);
+		response.sendRedirect("Contact");
 		
-		RequestDispatcher reqDis = request.getRequestDispatcher("contact.jsp");
-		reqDis.forward(request, response);
 	}
 
 }

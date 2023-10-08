@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,21 +15,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.PropertyManagementSystem.ContactDetails;
+import com.PropertyManagementSystem.User;
 
-@WebServlet("/Contact")
-public class Contact extends HttpServlet {
+@WebServlet("/Admin/AdminUserDetails")
+public class AdminUserDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+  
 	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
 	static String DBusername = "root";
 	static String DBpassword = "";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ContactDetails contact = null;
+		List<User> UserList = new ArrayList<User>();
 		
 		try {
 			
@@ -35,19 +36,22 @@ public class Contact extends HttpServlet {
 			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
 			
 			Statement statementObj = conObj.createStatement();
-			String sql = "SELECT * FROM contact";
+			String sql = "SELECT * FROM users";
 			
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
 			
-			if(resultSetObj.next()) {
-				int ContactID = resultSetObj.getInt(1);
-				String Description = resultSetObj.getString(2);
-				String Phone = resultSetObj.getString(3);
-				String Email = resultSetObj.getString(4);
-				String Address = resultSetObj.getString(5);
+			while(resultSetObj.next()) {
 				
-				contact = new ContactDetails(ContactID,Description,Phone,Email,Address);
+				int UID = resultSetObj.getInt(1);
+				String Username = resultSetObj.getString(2);
+				String Email = resultSetObj.getString(3);
+				String Password = resultSetObj.getString(4);
+				
+				User user = new User(UID,Username,Email,Password);
+				UserList.add(user);
 			}
+			
+			
 			
 		} catch (ClassNotFoundException e) {
 			
@@ -59,10 +63,10 @@ public class Contact extends HttpServlet {
 			
 		}
 		
-		request.setAttribute("contact", contact);
+		request.setAttribute("UserList", UserList);
 		
-		RequestDispatcher reqDis = request.getRequestDispatcher("contact.jsp");
+		RequestDispatcher reqDis = request.getRequestDispatcher("adminUser.jsp");
 		reqDis.forward(request, response);
+		
 	}
-
 }
