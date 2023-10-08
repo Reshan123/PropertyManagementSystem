@@ -15,7 +15,7 @@
     <div class="body">
         <div class="SideContainer">
             <div class="ElementContainer">
-                <a href="#">
+                <a href="adminIndex.jsp">
                     <img src="images/icon/Legal.png" alt="">
                     Dashboard
                 </a>
@@ -31,9 +31,13 @@
                     <img src="images/icon/Legal.png" alt="">
                     Feedback
                 </a>
+                <a href="AdminContactDetails">
+                    <img src="images/icon/Legal.png" alt="">
+                    Contact Details
+                </a>
                 <a href="#">
                     <img src="images/icon/Legal.png" alt="">
-                    About and Contact Details
+                    About Details
                 </a>
             </div>
         </div>
