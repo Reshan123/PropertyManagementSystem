@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminIndex.css">
-    <title>Admin Index</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>    
 
@@ -56,7 +56,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 </body>
 </html>

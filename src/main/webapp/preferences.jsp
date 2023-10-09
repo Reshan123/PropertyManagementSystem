@@ -58,7 +58,7 @@
                     <h3>Confirm New Password</h3>
                     <input type="password" class="input" placeholder="password" id="confirmPwd" oninput="validate()">
                     <h3>Email</h3>
-                    <input type="e-mail" class="input" placeholder="email@example.com" name="email" value=<%= userProfile.getEmail() %>>
+                    <input type="email" class="input" placeholder="email@example.com" name="email" value=<%= userProfile.getEmail() %>>
                 </div>
 
             </div>

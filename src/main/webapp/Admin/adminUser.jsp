@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Admin Dashboard</title>
 		<link rel="stylesheet" href="css/adminIndex.css">
 		<link rel="stylesheet" href="css/adminUserDetails.css">
 	</head>
@@ -37,7 +37,7 @@
 								<td><%= user.getUID() %></td>
 								<td><%= user.getUsername() %></td>
 								<td><%= user.getEmail() %></td>
-								<td><form><button>Edit</button><button>Delete</button></form></td>					
+								<td><form method="post" action="DeleteUser"><button name="UserID" value=<%= user.getUID() %>>DELETE</button><button>Something Else</button></form></td>					
 							</tr>
 						<% } %>
 					</table>
