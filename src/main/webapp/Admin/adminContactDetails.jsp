@@ -22,24 +22,18 @@
 		
 		<div class="MainContainer">
 		
-			<div class="Dashboard">
+			<div class="dashboard">
 				<div class="CardContainer">
+					<div class="welcomeText">
+	                    <h1>Contact Details</h1>
+	                    <p>Edit Contacr Details</p>
+	                </div>
 					<form method="get" action="UpdateContactDetails">
-						<table>
-							<tr>
-								<th>Description</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Address</th>
-								<th rowspan=2><button type="submit">Edit</button></th>
-							</tr>
-							<tr>
-								<td><textarea name="description" rows="10" style="width:95%"><%= contact.getDescription() %></textarea></td>
-								<td><input type="text" name="phone" value=<%= contact.getPhone() %>  /></td>
-								<td><input type="email" name="email" value=<%= contact.getEmail() %> style="width:95%"/></td>
-								<td><textarea name="address" rows="5" style="width:95%"><%= contact.getAddress() %></textarea></td>
-							</tr>
-						</table>
+						<span>Description : </span><textarea name="description" rows="10"><%= contact.getDescription() %></textarea><br/>
+						<span>Phone Number : </span><input type="text" name="phone" value=<%= contact.getPhone() %>  /><br/>
+						<span>Email : </span><input type="email" name="email" value=<%= contact.getEmail() %>/><br/>
+						<span>Address : </span><textarea name="address" rows="5"><%= contact.getAddress() %></textarea><br/>
+						<button type="submit">Edit</button>
 					</form>
 				</div>
 			</div>

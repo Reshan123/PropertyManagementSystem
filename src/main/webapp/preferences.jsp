@@ -52,7 +52,7 @@
 
                 <div class="profForm" >
                     <h3>Username</h3>
-                    <input type="text" class="input" placeholder="username" name="username" value=<%= userProfile.getUsername() %>>
+                    <input type="text" class="input" placeholder="username" name="username" value="<%= userProfile.getUsername() %>">
                     <h3>New Password</h3>
                     <input type="password" class="input" placeholder="password" name="passworddNew" id="pwd">
                     <h3>Confirm New Password</h3>

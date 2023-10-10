@@ -24,6 +24,10 @@
 		
 		<div class="MainContainer">
             <div class="dashboard">
+            	<div class="welcomeText">
+                    <h1>User Details</h1>
+                    <p>User management</p>
+                </div>
             	<div class="CardContainer">
 					<table>
 						<tr>
@@ -37,7 +41,7 @@
 								<td><%= user.getUID() %></td>
 								<td><%= user.getUsername() %></td>
 								<td><%= user.getEmail() %></td>
-								<td><form method="post" action="DeleteUser"><button name="UserID" value=<%= user.getUID() %>>DELETE</button><button>Something Else</button></form></td>					
+								<td><form method="post" action="DeleteUser"><button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button><button>Something Else</button></form></td>					
 							</tr>
 						<% } %>
 					</table>

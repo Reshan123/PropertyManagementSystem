@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+
+<%
+	String userCount = (String) session.getAttribute("UserCount");
+	if (userCount == null){
+		response.sendRedirect("IndexDetails");
+	}
+%>
+
 <!DOCTYPE html>
 <htmL>
 
@@ -34,7 +41,7 @@
                     Total Properties Listed
                 </div>
                 <div class="count">
-                    5
+                    0
                 </div>
             </div>
             <div class="card">
@@ -42,7 +49,7 @@
                     Properties Available for Sale
                 </div>
                 <div class="count">
-                    2
+                    0
                 </div>
             </div>
             <div class="card">
@@ -50,7 +57,7 @@
                     Number of Registered Users
                 </div>
                 <div class="count">
-                    10
+                    <%= userCount %>
                 </div>
             </div>
         </div>

@@ -24,6 +24,10 @@
 		
 		<div class="MainContainer">
 			<div class="dashboard">
+				<div class="welcomeText">
+                    <h1>Feedback Details</h1>
+                    <p>View feedback given by user</p>
+                </div>
 				<div class="CardContainer">
 					<table>
 						<tr>

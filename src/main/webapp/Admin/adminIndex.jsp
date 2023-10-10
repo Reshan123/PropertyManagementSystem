@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+
+<%
+	String UserCount = (String) request.getAttribute("UserCount");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +33,7 @@
                             Registered Users
                         </div>
                         <div class="count">
-                            5
+                            <%= UserCount %>
                         </div>
                     </div>
                     <div class="Card">
@@ -39,7 +44,7 @@
                             Listed Properties
                         </div>
                         <div class="count">
-                            5
+                            0
                         </div>
                     </div>
                     <div class="Card">
@@ -50,7 +55,7 @@
                             Active Properties
                         </div>
                         <div class="count">
-                            5
+                            0
                         </div>
                     </div>
                 </div>

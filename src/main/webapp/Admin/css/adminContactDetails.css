@@ -1,27 +1,25 @@
-table{
-	margin: 15px ;
-	text-align: center;
-	border-collapse:separate;
-	border-spacing: 10px 25px;
+
+
+.MainContainer .dashboard{
+	margin:0 30px;
+}
+.MainContainer .dashboard .CardContainer{
+	flex-direction: column;
+	gap: 0px;
 }
 
-table tr td:nth-child(1){
-	text-align: justify;
-	width: 35%;
-}
-
-table tr td:nth-child(2){
-	width: 10%;
-}
-
-
-table tr th button{
-	padding: 10px 20px;
-	background-color: white;
-	border-radius: 5px;
+form {
+	display: flex;
+	flex-direction: column;
+	gap:2px;
+	width:90%;
+	margin:auto;
 }
 
 button{
+	width: 10%;
+	align-self: flex-end;
+	padding: 5px 15px;
 	cursor: pointer;
 	box-shadow: 2px 2px 2px  black;
 }

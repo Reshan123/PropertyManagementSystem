@@ -1,9 +1,22 @@
+.MainContainer .dashboard .CardContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 table{
 	text-align: center;
 	border-collapse:separate;
 	border-spacing: 10px 25px;
 }
 
+table tr th{
+	font-size: 1.3em;
+}
+
+table tr td{
+	font-size: 1.2em;
+}
 
 table tr th , table tr td{
 	width: 150px;
@@ -12,8 +25,12 @@ table tr th , table tr td{
 }
 
 table tr th:last-child , table tr td:last-child{	
-	width: fit-content;
+	width: 250px;
 	border-bottom: none;
+}
+
+table tr th:nth-last-child(2) , table tr td:nth-last-child(2){	
+	width: 200px;
 	
 }
 

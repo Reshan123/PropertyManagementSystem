@@ -15,7 +15,7 @@
     <div class="body">
         <div class="SideContainer">
             <div class="ElementContainer">
-                <a href="adminIndex.jsp">
+                <a href="AdminIndex">
                     <img src="images/icon/Legal.png" alt="">
                     Dashboard
                 </a>
