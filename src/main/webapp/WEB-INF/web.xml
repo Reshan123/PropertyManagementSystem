@@ -1,4 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-
+<display-name>PropertyManagement</display-name>
+	 
+	 <welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	 
+	 <servlet>
+		<servlet-name>Index</servlet-name>
+		<servlet-class>com.Servlets.Index</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Index</servlet-name>
+		<url-pattern>/IndexDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.Servlets.Login</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Contact</servlet-name>
+		<servlet-class>com.Servlets.Contact</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Contact</servlet-name>
+		<url-pattern>/Contact</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditProfile</servlet-name>
+		<servlet-class>com.Servlets.EditProfile</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EditProfile</servlet-name>
+		<url-pattern>/EditProfile</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>com.Servlets.Logout</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Signin</servlet-name>
+		<servlet-class>com.Servlets.Signin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Signin</servlet-name>
+		<url-pattern>/Signin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Feedback</servlet-name>
+		<servlet-class>com.Servlets.Feedback</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Feedback</servlet-name>
+		<url-pattern>/Feedback</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>Admin</servlet-name>
+		<servlet-class>com.Servlets.AdminIndex</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Admin</servlet-name>
+		<url-pattern>/Admin/AdminIndex</url-pattern>
+		<url-pattern>/Admin/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminContactDetails</servlet-name>
+		<servlet-class>com.Servlets.AdminContactDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminContactDetails</servlet-name>
+		<url-pattern>/Admin/AdminContactDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminFeedback</servlet-name>
+		<servlet-class>com.Servlets.AdminFeedback</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminFeedback</servlet-name>
+		<url-pattern>/Admin/AdminFeedback</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminUserDetails</servlet-name>
+		<servlet-class>com.Servlets.AdminUserDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminUserDetails</servlet-name>
+		<url-pattern>/Admin/AdminUserDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateContactDetails</servlet-name>
+		<servlet-class>com.Servlets.UpdateContactDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateContactDetails</servlet-name>
+		<url-pattern>/Admin/UpdateContactDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteUser</servlet-name>
+		<servlet-class>com.Servlets.DeleteUser</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteUser</servlet-name>
+		<url-pattern>/Admin/DeleteUser</url-pattern>
+	</servlet-mapping>
 </web-app>

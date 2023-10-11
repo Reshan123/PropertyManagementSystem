@@ -31,7 +31,7 @@
 					<form method="get" action="UpdateContactDetails">
 						<span>Description : </span><textarea name="description" rows="10"><%= contact.getDescription() %></textarea><br/>
 						<span>Phone Number : </span><input type="text" name="phone" value=<%= contact.getPhone() %>  /><br/>
-						<span>Email : </span><input type="email" name="email" value=<%= contact.getEmail() %>/><br/>
+						<span>Email : </span><input type="email" name="email" value=<%= contact.getEmail() %> /><br/>
 						<span>Address : </span><textarea name="address" rows="5"><%= contact.getAddress() %></textarea><br/>
 						<button type="submit">Edit</button>
 					</form>
