@@ -2,9 +2,7 @@
 @import url(https://fonts.cdnfonts.com/css/leky-calgria);
 @import url(https://fonts.cdnfonts.com/css/falling-sky);
 
-.container{
-    
-}
+
 .list-containder {
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 200px;
@@ -39,16 +37,13 @@
     font-size: 22px;
 }
 .house-price{
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    
 }
 .house-price h4{
     font-size: 20px;
 }
-
-
-
-
-
 
 
 .pagination {
@@ -77,4 +72,29 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: smaller;
+}
+
+.buttonListing {
+    margin-left: 0px;
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    z-index: 1;
+    font-family: "Cavilant";
+    font-size: small;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.buttonListing:hover {
+    border: none;
+    background-color: #ffffffcc;
+    color: black;
+
 }

@@ -33,7 +33,7 @@
 
                 <div class="prefUserInfo">
                     <img src="images/ProfileIcon.png" class="prefLeftImg" alt="user">
-                    <h4>User Name</h4>
+                    <h4><%= userProfile.getUsername() %></h4>
                 </div>
 
                 <div class="otherInfo">

@@ -14,8 +14,7 @@
 
 <body>
     <%@ include file="includes/header.jsp" %>
-
-    <div class="container">
+ 	<div class="container">
 
         <div class="list-containder">
             <div class="house">
@@ -28,6 +27,7 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
                         <h4>0.00 LKR</h4>
                     </div>
                 </div>
@@ -43,7 +43,8 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
-                        <h4>1.00 LKR</h4>
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
+                        <h4>0.00 LKR</h4>
                     </div>
                 </div>
             </div>
@@ -58,6 +59,7 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
                         <h4>0.00 LKR</h4>
                     </div>
                 </div>
@@ -73,6 +75,7 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
                         <h4>0.00 LKR</h4>
                     </div>
                 </div>
@@ -87,6 +90,7 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
                         <h4>0.00 LKR</h4>
                     </div>
                 </div>
@@ -102,6 +106,7 @@
                     <h3>Small description</h3>
                     <p>wtf you have | like number of rooms and shit</p>
                     <div class="house-price">
+                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
                         <h4>0.00 LKR</h4>
                     </div>
                 </div>
@@ -120,8 +125,6 @@
             <img src="images/arrow.png" class="rArr">
 
         </div>
-    
-
     <%@ include file="includes/footer.jsp" %>
 
 

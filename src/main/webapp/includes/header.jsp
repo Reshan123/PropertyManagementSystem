@@ -22,9 +22,15 @@
             <div class="dropdown-content">
                 <a href="preferences.jsp">Preferences</a>
                 <a href="#">My Properties</a>
-                <a href="Logout">Log Out</a>
+                <a href="Logout" onclick="confirmLogout()">Log Out</a>
             </div>
         </li>
         <% } %>
     </ul>
 </div>
+
+<script>
+	function confirmLogout(){
+		return confirm("Are you sure you want to log out?");
+	}
+</script>
