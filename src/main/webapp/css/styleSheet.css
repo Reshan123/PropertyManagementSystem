@@ -2,26 +2,18 @@
 @import url(https://fonts.cdnfonts.com/css/leky-calgria);
 @import url(https://fonts.cdnfonts.com/css/falling-sky);
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.cdnfonts.com/css/tajawal');
 
 
-
-body {
+html,body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(10, 10, 10, 0.705)), url(../images/background.png);
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Montserrat';
-}
-
-@keyframes reveal{
-	from{
-		opacity: 0;
-	}
-	to{
-		opacity: 1;
-	}
+    height: 100%;
 }
 
 /* 1b1a17 */
@@ -33,35 +25,32 @@ body {
 
 
 .logo {
-    margin-left: 100px;
-}
-
-.header , .CardSection , .WhatWeDo{
-	animation: reveal both linear;
-    animation-timeline: view();
-    animation-range: 0% cover 60%;
+    margin-left: 50px;
 }
 
 .header {
-    height: 650px;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover; */
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
     
 }
 
 .header h1 {
-    font-family: "leky calgria";
-    font-size: 30px;
-    letter-spacing: 4px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
 }
 
 .header p {
     text-align: center;
-    font-size: 15px;
-    font-family: "falling sky";
+    font-size: 16px;
+    font-family: 'Tajawal', sans-serif;
 }
 
 button {
@@ -106,7 +95,10 @@ button {
 
 
 .CardSection {
-    height: 400px;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover; */
+    height: 100%;
     color: white;
     display: flex;
     align-items: center;
@@ -114,6 +106,7 @@ button {
 }
 
 .CardSection .CardContainer {
+    /* background-color: #1b1a17; */
     border-top: #ffffff solid 1px;
     border-bottom: #ffffff solid 1px;
     padding: 50px 0;
@@ -124,15 +117,21 @@ button {
 }
 
 .CardSection .CardContainer .card {
-    border: 2px solid white;
-    border-radius: 15px;
-    height: 350px;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed; */
+
+    /* background: transparent; */
+    /* border: 2px solid white;
+    border-radius: 15px; */
+    /* height: 250px; */
     width: 20%;
+    padding: 100px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    box-shadow: 1px 4px 20px rgb(0, 0, 0);
 }
 
 .CardSection .CardContainer .card:nth-child(1) {
@@ -162,11 +161,15 @@ button {
 
 .WhatWeDo {
     padding: 0px 0 100px 0;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
+    background-attachment: fixed;
+    background-size: cover; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    height: 100%;
 }
 
 .WhatWeDo p {
@@ -187,6 +190,9 @@ button {
     align-items: center;
     width: 15%;
     gap: 10px;
+    padding: 10px 50px;
+    box-shadow: 1px 4px 20px rgb(0, 0, 0);
+
 }
 
 .WhatWeDo .container .service .icon img {
@@ -196,4 +202,11 @@ button {
 .WhatWeDo .container .service .title {
     font-weight: 600;
     font-size: 1.5em;
+}
+
+
+
+
+.something2 {
+    height: 500px;
 }

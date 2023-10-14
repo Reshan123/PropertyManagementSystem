@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/styleSheet.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/aniScroll.css">
+    <script defer src="js/app.js"></script>
     <title>HomePage</title>
 </head>
 

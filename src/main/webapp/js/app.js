@@ -8,3 +8,15 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
+
+const headerElements = document.querySelectorAll('.header');
+headerElements.forEach((el) => observer.observe(el));
+
+const CardSectionElements = document.querySelectorAll('.card');
+CardSectionElements.forEach((el) => observer.observe(el));
+
+const serviceElements = document.querySelectorAll('.service');
+serviceElements.forEach((el) => observer.observe(el));
+
+const WhatWeDoElements = document.querySelectorAll('.WhatWeDo');
+WhatWeDoElements.forEach((el) => observer.observe(el));
