@@ -27,10 +27,6 @@
                     <img src="images/icon/Legal.png" alt="">
                     Properties
                 </a>
-                <a href="AdminFeedback">
-                    <img src="images/icon/Legal.png" alt="">
-                    Feedback
-                </a>
                 <a href="AdminContactDetails">
                     <img src="images/icon/Legal.png" alt="">
                     Contact Details
@@ -39,5 +35,17 @@
                     <img src="images/icon/Legal.png" alt="">
                     About Details
                 </a>
+                <div class="feedback">
+                	<img src="images/icon/Legal.png" alt="">
+                	<p>Feedback</p>
+                	<div>
+	                	<a href="AdminFeedbackReg">
+		                    Registered User
+		                </a>
+		                <a href="AdminFeedback">	                    
+		                    Unregistered user
+		                </a>
+	                </div>                    
+                </div>
             </div>
         </div>

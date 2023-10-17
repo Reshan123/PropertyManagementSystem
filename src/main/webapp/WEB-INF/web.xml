@@ -76,6 +76,37 @@
 		<url-pattern>/Feedback</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>GetFeedback</servlet-name>
+		<servlet-class>com.Servlets.GetFeedback</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetFeedback</servlet-name>
+		<url-pattern>/GetFeedback</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteProfile</servlet-name>
+		<servlet-class>com.Servlets.DeleteProfile</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteProfile</servlet-name>
+		<url-pattern>/DeleteProfile</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteFeedback</servlet-name>
+		<servlet-class>com.Servlets.DeleteFeedback</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteFeedback</servlet-name>
+		<url-pattern>/DeleteFeedback</url-pattern>
+	</servlet-mapping>
+	
+	
 	
 	
 	
@@ -139,5 +170,15 @@
 	<servlet-mapping>
 		<servlet-name>DeleteUser</servlet-name>
 		<url-pattern>/Admin/DeleteUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminFeedbackReg</servlet-name>
+		<servlet-class>com.Servlets.AdminFeedbackReg</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminFeedbackReg</servlet-name>
+		<url-pattern>/Admin/AdminFeedbackReg</url-pattern>
 	</servlet-mapping>
 </web-app>

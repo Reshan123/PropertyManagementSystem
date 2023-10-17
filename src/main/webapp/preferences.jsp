@@ -39,6 +39,9 @@
                 <div class="otherInfo">
                     <h2>Thanks to Us</h2>
                     <p>ur sorry-ass has another chance to fix your uglyass name</p>
+                    <form method="post" action="DeleteProfile">
+						<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
+					</form>
                 </div>
             </div>
 
@@ -64,11 +67,10 @@
             </div>
             <div class="prefRightBtns">
                 <button class="prefRightBtn">Cancel</button>
-                <button class="prefRightBtn" type="submit">Confirm</button>
-
+                <button class="prefRightBtn" type="submit">Confirm</button>            
             </div>
         </form>
-
+		
     </div>
 
 

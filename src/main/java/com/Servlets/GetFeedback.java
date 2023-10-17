@@ -7,24 +7,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.PropertyManagementSystem.ContactDetails;
+import com.PropertyManagementSystem.FeedbackDetails;
+import com.PropertyManagementSystem.User;
 
-public class Contact extends HttpServlet {
+public class GetFeedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
 	static String DBusername = "root";
 	static String DBpassword = "";
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ContactDetails contact = null;
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+		System.out.print("GetFeedback");
+		
+		FeedbackDetails feedback = new FeedbackDetails("","","","",user.getUID());
 		
 		try {
 			
@@ -32,18 +38,19 @@ public class Contact extends HttpServlet {
 			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
 			
 			Statement statementObj = conObj.createStatement();
-			String sql = "SELECT * FROM contact";
+			String sql = "SELECT * FROM feedbackreg WHERE UID =" + user.getUID();
 			
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
 			
 			if(resultSetObj.next()) {
-				int ContactID = resultSetObj.getInt(1);
-				String Description = resultSetObj.getString(2);
-				String Phone = resultSetObj.getString(3);
+				String Fname = resultSetObj.getString(2);
+				String Lname = resultSetObj.getString(3);
 				String Email = resultSetObj.getString(4);
-				String Address = resultSetObj.getString(5);
+				String Message = resultSetObj.getString(5);
+				int UID = resultSetObj.getInt(6);
 				
-				contact = new ContactDetails(ContactID,Description,Phone,Email,Address);
+				feedback = new FeedbackDetails(Fname,Lname,Email,Message,UID);
+				
 			}
 			
 		} catch (ClassNotFoundException e) {
@@ -56,9 +63,10 @@ public class Contact extends HttpServlet {
 			
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("contact", contact);
-		response.sendRedirect("contact.jsp");
+		request.setAttribute("feedback", feedback);
+		
+		RequestDispatcher reqDis = request.getRequestDispatcher("contact.jsp");
+		reqDis.forward(request, response);
 		
 	}
 

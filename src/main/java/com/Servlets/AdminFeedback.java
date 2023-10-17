@@ -34,7 +34,7 @@ public class AdminFeedback extends HttpServlet {
 			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
 			
 			Statement statementObj = conObj.createStatement();
-			String sql = "SELECT * FROM feedback";
+			String sql = "SELECT * FROM feedbackunreg";
 			
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
 			

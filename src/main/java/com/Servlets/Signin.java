@@ -24,7 +24,7 @@ public class Signin extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
-		response.sendRedirect("preferences.jsp");
+		response.sendRedirect("index.jsp");
 	}
 
 }

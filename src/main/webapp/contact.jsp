@@ -1,12 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<%@ page import="com.PropertyManagementSystem.ContactDetails" %>
+<%@ page 
+	import="com.PropertyManagementSystem.ContactDetails"
+	import="com.PropertyManagementSystem.FeedbackDetails"	
+ %>
 
 <%
-	ContactDetails contact = (ContactDetails) request.getAttribute("contact");
+	ContactDetails contact = (ContactDetails) session.getAttribute("contact");
 	if (contact == null){
-		System.out.println("fked up contact jsp");
+		response.sendRedirect("Contact");
+	}
+	User userProfile = (User) session.getAttribute("user");
+	FeedbackDetails feedback =  (FeedbackDetails) request.getAttribute("feedback");
+	if ( userProfile != null){
+		if ( feedback == null){
+			System.out.print("contact.jsp");
+			response.sendRedirect("GetFeedback");
+			return;
+		}
 	}
 %>
 
@@ -36,7 +48,7 @@
                 </div>
                 <h1>Contact Us</h1>
                 <p>
-                <h5><%= contact.getDescription() %></h5>
+                	<h5><%= contact.getDescription() %></h5>
                 </p>
                 <ul class="contact_details">
                     <li>
@@ -55,22 +67,56 @@
             </aside>
 
             <!-- <h1>Send us Feedback</h1> -->
-            <div class="contactRight" >
-                <h1>Send us your Feedback </h1>
-
-                <form action="Feedback" method="POST" class="contact_form">
-                    <div class="from_name">
-                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;">
-                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;">
-                    </div>
-                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;">
-                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
-                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
-                </form>
-
-            </div>
-
-
+            <%	if (userProfile == null){ %>
+				<div class="contactRight" >
+	                <h1>Send us your Feedback </h1>
+	
+	                <form action="Feedback" method="POST" class="contact_form">
+	                    <div class="from_name">
+	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;">
+	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;">
+	                    </div>
+	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;">
+	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
+	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
+	                </form>
+	
+	            </div>
+	        <% } else if (userProfile != null && feedback.getFname()== "") { %>
+	       		<div class="contactRight" >
+	                <h1>Send us your Feedback </h1>
+	
+	                <form action="Feedback" method="POST" class="contact_form">
+	                    <div class="from_name">
+	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
+	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">
+	                    </div>
+	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" value="<%= feedback.getEmail() %>">
+	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"><%= feedback.getMessage() %></textarea>
+	                    <input type="text" name="UID" required style="display:none;" value="<%= feedback.getUID() %>">
+	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
+	                </form>       
+	            </div>
+	        <% } else { %>
+	        	<div class="contactRight" >
+	                <h1>Send us your Feedback </h1>
+	
+	                <form action="Feedback" method="POST" class="contact_form">
+	                    <div class="from_name">
+	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
+	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">
+	                    </div>
+	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" value="<%= feedback.getEmail() %>">
+	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"><%= feedback.getMessage() %></textarea>
+	                    <input type="text" name="UID" required style="display:none;" value="<%= feedback.getUID() %>">
+	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
+	                </form>
+	                <form method="post" action="DeleteFeedback">
+						<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
+					</form>
+	
+	            </div>
+			<% } %>
 
         </div>
     </section>
