@@ -106,6 +106,16 @@
 		<url-pattern>/DeleteFeedback</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>GetPropertyDetails</servlet-name>
+		<servlet-class>com.Servlets.GetPropertyDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetPropertyDetails</servlet-name>
+		<url-pattern>/GetPropertyDetails</url-pattern>
+	</servlet-mapping>
+	
 	
 	
 	

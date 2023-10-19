@@ -49,7 +49,7 @@
                 <h1>Contact Us</h1>
                 <p>
                 	<h5><%= contact.getDescription() %></h5>
-                </p>
+               
                 <ul class="contact_details">
                     <li>
                         <i class="uil-phone-times"></i>

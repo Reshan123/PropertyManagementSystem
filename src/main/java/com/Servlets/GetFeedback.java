@@ -1,10 +1,7 @@
 package com.Servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
@@ -15,29 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.PropertyManagementSystem.FeedbackDetails;
+import com.PropertyManagementSystem.GetConnection;
 import com.PropertyManagementSystem.User;
 
 public class GetFeedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
-	static String DBusername = "root";
-	static String DBpassword = "";
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		System.out.print("GetFeedback");
+		Statement statementObj = null;
 		
 		FeedbackDetails feedback = new FeedbackDetails("","","","",user.getUID());
 		
 		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
-			
-			Statement statementObj = conObj.createStatement();
+			statementObj = GetConnection.getConnection();
 			String sql = "SELECT * FROM feedbackreg WHERE UID =" + user.getUID();
 			
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
@@ -53,11 +43,7 @@ public class GetFeedback extends HttpServlet {
 				
 			}
 			
-		} catch (ClassNotFoundException e) {
-			
-			System.out.println("Something wrong with loading driver " + e.toString());
-			
-		} catch (SQLException e) {
+		} catch(Exception e) {
 			
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			

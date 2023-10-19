@@ -1,10 +1,7 @@
 package com.Servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,21 +16,15 @@ import com.PropertyManagementSystem.*;
 
 public class AdminFeedbackReg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
-	static String DBusername = "root";
-	static String DBpassword = "";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<FeedbackDetails> feedbackList = new ArrayList<FeedbackDetails>();
+		Statement statementObj = null;
 		
 		try {
 			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
-			
-			Statement statementObj = conObj.createStatement();
+			statementObj = GetConnection.getConnection();
 			String sql = "SELECT * FROM feedbackreg";
 			
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
@@ -51,11 +42,7 @@ public class AdminFeedbackReg extends HttpServlet {
 			
 			
 			
-		} catch (ClassNotFoundException e) {
-			
-			System.out.println("Something wrong with loading driver " + e.toString());
-			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			

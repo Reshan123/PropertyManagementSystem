@@ -1,15 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ page 
+	import="com.PropertyManagementSystem.*"
+	import="java.util.*"
+%>
 
 <!DOCTYPE html>
 <html lang="en">
+
+<%
+	List<Property> PropertyList = (List<Property>) request.getAttribute("PropertyList");
+	if (PropertyList == null){
+		response.sendRedirect("GetPropertyDetails");
+	}
+%>
 
 <head>
     <link rel="stylesheet" href="css/listing.css">
     <link rel="stylesheet" href="css/styleSheet.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
-    <title>Listing </title>
+    <title>Listing</title>
 </head>
 
 <body>
@@ -17,100 +29,23 @@
  	<div class="container">
 
         <div class="list-containder">
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s1.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s2.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s4.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s3.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s3.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="house">
-                <div class="house-img">
-                    <img src="images/image-s3.png">
-                </div>
-
-                <div class="house-info">
-                    <p>location</p>
-                    <h3>Small description</h3>
-                    <p>wtf you have | like number of rooms and shit</p>
-                    <div class="house-price">
-                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
-                        <h4>0.00 LKR</h4>
-                    </div>
-                </div>
-            </div>
+            <% for(Property house : PropertyList){ %>
+            	<div class="house">
+	                <div class="house-img">
+	                    <img src="images/image-s1.png">
+	                </div>
+	
+	                <div class="house-info">
+	                    <p><%= house.getAddress() %></p>
+	                    <h3><%= house.getDescription() %></h3>
+	                    <p><%= house.getArea() %> sqft | Room Count : <%= house.getRooms() %></p>
+	                    <div class="house-price">
+	                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
+	                        <h4><%= house.getPrice() %> LKR</h4>
+	                    </div>
+	                </div>
+	            </div>
+            <% } %>
         </div>
     </div>
          <div class="pagination">

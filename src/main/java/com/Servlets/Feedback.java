@@ -1,9 +1,6 @@
 package com.Servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -11,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.PropertyManagementSystem.GetConnection;
+
 
 public class Feedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
-	static String DBusername = "root";
-	static String DBpassword = "";
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -30,12 +25,11 @@ public class Feedback extends HttpServlet {
 			UID = Integer.parseInt(request.getParameter("UID"));
 		}
 		
+		Statement statementObj = null;
+		
 		try {
 			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conObj = DriverManager.getConnection(url,DBusername,DBpassword);
-			
-			Statement statementObj = conObj.createStatement();
+			statementObj = GetConnection.getConnection();
 			if (UID == null) {
 				String sql = "INSERT INTO feedbackunreg (Fname , Lname , Email , Message ) VALUES ('"+firstName+"','"+lastName+"','"+Email+"', \" "+message+" \" )";
 				statementObj.execute(sql);
@@ -46,11 +40,7 @@ public class Feedback extends HttpServlet {
 			
 			
 			
-		} catch (ClassNotFoundException e) {
-			
-			System.out.println("Something wrong with loading driver " + e.toString());
-			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			

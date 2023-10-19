@@ -9,7 +9,7 @@
         <li class="navItem"><a href="index.jsp">Home</a> </li>
         <li class="navItem"><a href="#">About</a> </li>
         <li class="navItem"><a href="Contact">Contact</a> </li>
-        <li class="navItem"><a href="listing.jsp">Properties</a> </li>
+        <li class="navItem"><a href="GetPropertyDetails">Properties</a> </li>
         <% 
 			User user = (User) session.getAttribute("user");
 			if (user == null){
