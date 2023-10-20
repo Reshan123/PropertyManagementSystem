@@ -3,7 +3,6 @@ package com.UserServlets;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,23 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.PropertyManagementSystem.Property;
 import com.PropertyManagementSystem.GetConnection;
+import com.PropertyManagementSystem.Property;
 
-public class GetPropertyDetails extends HttpServlet {
+public class GetAllPropertyDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List <Property> PropertyList = new ArrayList<Property>();
+		String PID = request.getParameter("propertyID");
+		Property house = null;
 		
-		Statement statementObj = null;
+		Statement statementObj = GetConnection.getConnection();
+		String sql = "SELECT * FROM property WHERE ID = " + PID;
+		
+		ResultSet resultSetObj;
 		try {
-			statementObj = GetConnection.getConnection();
-	
-			String sql = "SELECT * FROM property";
-			ResultSet resultSetObj = statementObj.executeQuery(sql);
-			
+			resultSetObj = statementObj.executeQuery(sql);
 			while(resultSetObj.next()) {
 				
 				int PropertyID = resultSetObj.getInt(1);
@@ -37,18 +36,21 @@ public class GetPropertyDetails extends HttpServlet {
 				String Price = resultSetObj.getString(5);
 				int NoOfRooms = resultSetObj.getInt(6);
 				String Area = resultSetObj.getString(7);
+				int UID = resultSetObj.getInt(8);
 				String MainImage = resultSetObj.getString(9);
 				
-				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,MainImage));
+				String UserName = Validate.getUser(UID);
+				
+				house = new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,UserName,MainImage);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("PropertyList", PropertyList);
+		request.setAttribute("house", house);
 		
-		RequestDispatcher reqDis = request.getRequestDispatcher("listing.jsp");
-		reqDis.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewMore.jsp");
+		dispatcher.forward(request, response);
 		
 	}
 

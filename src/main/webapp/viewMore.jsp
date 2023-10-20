@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+<%@ page
+	import="com.PropertyManagementSystem.*"
+%>
+
+<% Property house = (Property) request.getAttribute("house"); %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,8 @@
 <body>
     <%@ include file="includes/header.jsp" %>
     <div style="height:500px">
-    	<%= request.getParameter("propertyID") %>
+    	<br/><br/><br/><br/><br/><h1><%= house.getUserName() %></h1>
+    	
     </div>
     <%@ include file="includes/footer.jsp" %>
 </body>

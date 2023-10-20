@@ -9,8 +9,10 @@ public class Property {
 	private String price;
 	private int rooms;
 	private String area;
+	private String UserName;
+	private String MainImage;
 	
-	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area) {
+	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area, String MainImage) {
 		ID = iD;
 		PropertyName = propertyName;
 		Address = address;
@@ -18,8 +20,20 @@ public class Property {
 		this.price = price;
 		this.rooms = rooms;
 		this.area = area;
+		this.MainImage = MainImage;
 	}
-
+	
+	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area, String Username, String MainImage ) {
+		ID = iD;
+		PropertyName = propertyName;
+		Address = address;
+		Description = description;
+		this.price = price;
+		this.rooms = rooms;
+		this.area = area;
+		this.UserName = Username;
+		this.MainImage = MainImage;
+	}
 
 	public int getID() {
 		return ID;
@@ -54,4 +68,11 @@ public class Property {
 		return area;
 	}
 	
+	public String getMainImage() {
+		return MainImage;
+	}
+	
+	public String getUserName() {
+		return UserName;
+	}
 }
