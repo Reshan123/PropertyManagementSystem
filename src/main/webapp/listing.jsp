@@ -41,7 +41,9 @@
 	                    <h3><%= house.getPropertyName() %></h3>
 	                    <p><%= house.getArea() %> sqft | Room Count : <%= house.getRooms() %></p>
 	                    <div class="house-price">
-	                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
+	                        <form method="post" action="viewMore.jsp">
+	                        	<button type="submit" name="propertyID" value=<%= house.getID() %> id="name " class="buttonListing">View More</button>
+	                        </form>
 	                        <h4><%= house.getPrice() %> LKR</h4>
 	                    </div>
 	                </div>
