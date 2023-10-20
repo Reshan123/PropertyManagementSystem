@@ -191,4 +191,14 @@
 		<servlet-name>AdminFeedbackReg</servlet-name>
 		<url-pattern>/Admin/AdminFeedbackReg</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminLogin</servlet-name>
+		<servlet-class>com.AdminServlets.AdminLogin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminLogin</servlet-name>
+		<url-pattern>/Admin/AdminLogin</url-pattern>
+	</servlet-mapping>
 </web-app>

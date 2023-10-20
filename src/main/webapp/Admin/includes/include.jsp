@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-    
+<% 
+	String userlogged = (String) session.getAttribute("AdminUserLogged");
+	if (userlogged == null){
+		response.sendRedirect("adminLogin.jsp");
+	} 
+
+%>
+  
 <nav>
         <div class="logo">
             <img src="images/logo.png" alt="">
