@@ -5,7 +5,9 @@
 	String userCount = (String) session.getAttribute("UserCount");
 	if (userCount == null){
 		response.sendRedirect("IndexDetails");
+		return;
 	}
+	System.out.print(userCount);
 %>
 
 <!DOCTYPE html>
@@ -25,14 +27,18 @@
 	<%@ include file="includes/header.jsp" %>
     
     <div class="header">
-        <h1>Your Property, Our Passion</h1>
+
+        <div class="tagline">
+            <h1>Tomorrow, built today</h1>  
+        </div>
+            
         <p>Discover Your Dream Home or Unlock the Value of
-            Your Property with Our Comprehensive Buying and Selling Services.
-            <br>Join the Journey Towards Your Property Goals Today!.
+            Your Property <br> with Our Comprehensive Buying and Selling Services.
+            <br><br><br>Join the Journey Towards Your Property Goals Today!.
         </p>
         <div>
-            <button type="button"><span></span>Get Started</button>
-            <button type="button" Onclick="location.href ='listing.jsp'"><span></span>View Listing</button>
+            <button type="button" class="index-btn"><span></span>Get Started</button>
+            <button type="button" class="index-btn"><span></span>View Listing</button>
         </div>
     </div>
 

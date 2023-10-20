@@ -32,31 +32,37 @@ html,body {
     /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.784), rgba(20, 20, 20, 0.307)), url(../images/background.png);
     background-attachment: fixed;
     background-size: cover; */
+    margin-top: 0;
+    padding-left: 150px;
     color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     height: 100%;
-    
+
 }
 
 .header h1 {
-    font-family: 'Tajawal', sans-serif;
+    /* margin-top: 100px */
+    font-family: 'Madeleina Sans', sans-serif;
     font-size: 50px;
     letter-spacing: 2px;
+    margin-bottom: -20px;
+
 }
 
+
 .header p {
-    text-align: center;
+    /* margin-top: 100px; */
+    text-align: left;
     font-size: 16px;
     font-family: 'Tajawal', sans-serif;
 }
 
-button {
+.index-btn {
     z-index: 1;
     margin-top: 10px;
-    margin-left: 15px;
     margin-right: 15px;
     font-family: "Cavilant";
     font-size: small;
@@ -70,6 +76,42 @@ button {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
+}
+
+.header div .index-btn span {
+    background: #ffd24d;
+    color: black;
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.3s;
+
+}
+
+button {
+    z-index: 1;
+    margin-top: 10px;
+    margin-right: 15px;
+    font-family: "Cavilant";
+    font-size: small;
+    width: 150px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid #ffd24d;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+button:hover{
+    color: black;
 }
 
 .header div button span {
@@ -166,8 +208,8 @@ button {
     background-size: cover; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:first baseline;
+    align-items:center;
     color: white;
     height: 100%;
 }
