@@ -40,7 +40,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1,'At (name), we are committed to providing exceptional property management services and ensuring that our clients needs are met with the utmost professionalism and care.','011-123456789','somethingCompany@email.com','No 61 , Some Street , Some Town');
+INSERT INTO `contact` VALUES (1,'At Mundial Invest, we are committed to providing exceptional property management services and ensuring that our clients needs are met with the utmost professionalism and care.','011-123456789','somethingCompany@email.com','No 61 , Some Street , Some Town');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `feedbackreg` (
   `Message` longtext DEFAULT NULL,
   `UID` int(11) DEFAULT NULL,
   PRIMARY KEY (`FID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `feedbackreg` (
 
 LOCK TABLES `feedbackreg` WRITE;
 /*!40000 ALTER TABLE `feedbackreg` DISABLE KEYS */;
-INSERT INTO `feedbackreg` VALUES (3,'Reshan','Gomis','reshan@mail.com',' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ',15);
+INSERT INTO `feedbackreg` VALUES (5,'Reshan','Gomis','reshan@mail.com','  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  ',16);
 /*!40000 ALTER TABLE `feedbackreg` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,6 +100,35 @@ INSERT INTO `feedbackunreg` VALUES (2,'Reshan','Gomis','reshan@mail.com',' Lorem
 UNLOCK TABLES;
 
 --
+-- Table structure for table `property`
+--
+
+DROP TABLE IF EXISTS `property`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `property` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `propertyName` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `description` longtext DEFAULT NULL,
+  `price` varchar(45) DEFAULT NULL,
+  `rooms` int(11) DEFAULT NULL,
+  `area` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `property`
+--
+
+LOCK TABLES `property` WRITE;
+/*!40000 ALTER TABLE `property` DISABLE KEYS */;
+INSERT INTO `property` VALUES (1,'Malaka House','No46 , Some Road , Some City','Lorem Ipsum is simply dummy text','1,200,000',10,'1,500'),(2,'Nalaka House','No59 , Some Road , Some City','Lorem Ipsum is simply dummy text','5,500,000',10,'2,500'),(3,'Ruwan House','No12 , Some Road , Some City','Lorem Ipsum is simply dummy text','2,500,000',3,'500'),(4,'Melwin House ','No89/2 , Some Road , Some City','Lorem Ipsum is simply dummy text','1,400,000',4,'600');
+/*!40000 ALTER TABLE `property` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -112,7 +141,7 @@ CREATE TABLE `users` (
   `email` varchar(255) DEFAULT NULL,
   `userPassword` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`UID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +150,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'Kavi','Kavi@gmail.com','pass'),(3,'Aya','Aya@gmail.com','pass'),(4,'Heidi','heidi@gmail.com','pass'),(6,'John','john@gmail.com','pass'),(15,'Reshan','reshangomis@gmail.com','pass');
+INSERT INTO `users` VALUES (2,'Kavi','Kavi@gmail.com','pass'),(3,'Aya','Aya@gmail.com','pass'),(4,'Heidi','heidi@gmail.com','pass'),(6,'John','john@gmail.com','pass'),(16,'Reshan','reshangomis@gmail.com','pass');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-19  6:36:42
+-- Dump completed on 2023-10-20 18:40:14
