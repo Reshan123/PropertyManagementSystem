@@ -9,7 +9,7 @@ public class GetConnection {
 	
 	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
 	static String DBusername = "root";
-	static String DBpassword = "";
+	static String DBpassword = "AbCd@1234";
 	
 	public static Statement getConnection() {
 		
