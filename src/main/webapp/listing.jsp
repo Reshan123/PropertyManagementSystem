@@ -13,6 +13,7 @@
 	List<Property> PropertyList = (List<Property>) request.getAttribute("PropertyList");
 	if (PropertyList == null){
 		response.sendRedirect("GetPropertyDetails");
+		return;
 	}
 %>
 
@@ -37,7 +38,7 @@
 	
 	                <div class="house-info">
 	                    <p><%= house.getAddress() %></p>
-	                    <h3><%= house.getDescription() %></h3>
+	                    <h3><%= house.getPropertyName() %></h3>
 	                    <p><%= house.getArea() %> sqft | Room Count : <%= house.getRooms() %></p>
 	                    <div class="house-price">
 	                        <button type="submit" name="send" id="name " class="buttonListing">View More</button>
