@@ -15,7 +15,6 @@
 	FeedbackDetails feedback =  (FeedbackDetails) request.getAttribute("feedback");
 	if ( userProfile != null){
 		if ( feedback == null){
-			System.out.print("contact.jsp");
 			response.sendRedirect("GetFeedback");
 			return;
 		}

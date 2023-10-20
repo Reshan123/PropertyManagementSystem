@@ -32,7 +32,7 @@
         </p>
         <div>
             <button type="button"><span></span>Get Started</button>
-            <button type="button"><span></span>View Listing</button>
+            <button type="button" Onclick="location.href ='listing.jsp'"><span></span>View Listing</button>
         </div>
     </div>
 
