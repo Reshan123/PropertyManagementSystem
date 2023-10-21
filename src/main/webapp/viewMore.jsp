@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<<<<<<< HEAD
 <%@ page
 	import="com.PropertyManagementSystem.*"
 %>
@@ -13,8 +12,6 @@
 	}
 %>
 
-=======
->>>>>>> parent of 93c2be5 (setting up for view more listing page)
 <!DOCTYPE html>
 <html lang="en">
 <head>
