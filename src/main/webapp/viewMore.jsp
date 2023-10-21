@@ -5,7 +5,12 @@
 	import="com.PropertyManagementSystem.*"
 %>
 
-<% Property house = (Property) request.getAttribute("house"); %>
+<% Property house = (Property) request.getAttribute("house");
+	if (house == null){
+		response.sendRedirect("IndexDetails");
+		return;
+	}
+%>
 
 <!DOCTYPE html>
 <html lang="en">
