@@ -116,16 +116,6 @@
 		<url-pattern>/GetPropertyDetails</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>GetAllPropertyDetails</servlet-name>
-		<servlet-class>com.UserServlets.GetAllPropertyDetails</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>GetAllPropertyDetails</servlet-name>
-		<url-pattern>/GetAllPropertyDetails</url-pattern>
-	</servlet-mapping>
-	
 	
 	
 	

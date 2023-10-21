@@ -3,11 +3,11 @@
 
 <%
 	String userCount = (String) session.getAttribute("UserCount");
-	String propertyCount = (String) session.getAttribute("PropertyCount");
-	if (userCount == null || propertyCount == null){
+	if (userCount == null){
 		response.sendRedirect("IndexDetails");
 		return;
 	}
+	System.out.print(userCount);
 %>
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
         </p>
         <div>
             <button type="button" class="index-btn"><span></span>Get Started</button>
-            <button type="button" class="index-btn" onclick="javascript:location.href='GetPropertyDetails'"><span></span>View Listing</button>
+            <button type="button" class="index-btn"><span></span>View Listing</button>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
                     Total Properties Listed
                 </div>
                 <div class="count">
-                    <%= propertyCount %>
+                    0
                 </div>
             </div>
             <div class="card">

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+<<<<<<< HEAD
 <%@ page
 	import="com.PropertyManagementSystem.*"
 %>
@@ -12,6 +13,8 @@
 	}
 %>
 
+=======
+>>>>>>> parent of 93c2be5 (setting up for view more listing page)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +32,7 @@
 <body>
     <%@ include file="includes/header.jsp" %>
     <div style="height:500px">
-    	<br/><br/><br/><br/><br/><h1><%= house.getUserName() %></h1>
-    	
+    	<%= request.getParameter("propertyID") %>
     </div>
     <%@ include file="includes/footer.jsp" %>
 </body>

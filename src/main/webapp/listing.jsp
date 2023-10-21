@@ -33,7 +33,7 @@
             <% for(Property house : PropertyList){ %>
             	<div class="house">
 	                <div class="house-img">
-	                    <img src="images/<%= house.getMainImage() %>">
+	                    <img src="images/image-s1.png">
 	                </div>
 	
 	                <div class="house-info">
@@ -41,7 +41,7 @@
 	                    <h3><%= house.getPropertyName() %></h3>
 	                    <p><%= house.getArea() %> sqft | Room Count : <%= house.getRooms() %></p>
 	                    <div class="house-price">
-	                        <form method="get" action="GetAllPropertyDetails">
+	                        <form method="post" action="viewMore.jsp">
 	                        	<button type="submit" name="propertyID" value=<%= house.getID() %> id="name " class="buttonListing">View More</button>
 	                        </form>
 	                        <h4><%= house.getPrice() %> LKR</h4>
