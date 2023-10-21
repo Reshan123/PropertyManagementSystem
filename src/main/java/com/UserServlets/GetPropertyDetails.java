@@ -40,9 +40,9 @@ public class GetPropertyDetails extends HttpServlet {
 				int UID = resultSetObj.getInt(8);
 				String MainImage = resultSetObj.getString(9);
 				
-				String UserName = Validate.getUser(UID);
+				String UserName = Validate.getUserName(UID);
 				
-				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,UserName,MainImage));
+				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,MainImage,UserName));
 
 			}
 		} catch (Exception e) {

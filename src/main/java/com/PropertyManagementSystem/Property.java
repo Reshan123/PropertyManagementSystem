@@ -9,8 +9,11 @@ public class Property {
 	private String price;
 	private int rooms;
 	private String area;
+	private String MainImage;
+	private String UserName;
 	
-	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area) {
+	public Property(int iD, String propertyName, String address, String description, String price, int rooms,
+			String area, String mainImage, String userName) {
 		ID = iD;
 		PropertyName = propertyName;
 		Address = address;
@@ -18,6 +21,20 @@ public class Property {
 		this.price = price;
 		this.rooms = rooms;
 		this.area = area;
+		MainImage = mainImage;
+		UserName = userName;
+	}
+
+
+	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area, String mainImage ) {
+		ID = iD;
+		PropertyName = propertyName;
+		Address = address;
+		Description = description;
+		this.price = price;
+		this.rooms = rooms;
+		this.area = area;
+		MainImage = mainImage;
 	}
 
 
@@ -52,6 +69,16 @@ public class Property {
 	
 	public String getArea() {
 		return area;
+	}
+
+
+	public String getMainImage() {
+		return MainImage;
+	}
+
+
+	public String getUserName() {
+		return UserName;
 	}
 	
 }

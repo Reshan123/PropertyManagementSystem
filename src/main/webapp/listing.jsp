@@ -33,7 +33,7 @@
             <% for(Property house : PropertyList){ %>
             	<div class="house">
 	                <div class="house-img">
-	                    <img src="images/image-s1.png">
+	                    <img src="images/<%= house.getMainImage() %>">
 	                </div>
 	
 	                <div class="house-info">
