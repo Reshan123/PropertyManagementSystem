@@ -37,12 +37,9 @@ public class GetPropertyDetails extends HttpServlet {
 				String Price = resultSetObj.getString(5);
 				int NoOfRooms = resultSetObj.getInt(6);
 				String Area = resultSetObj.getString(7);
-				int UID = resultSetObj.getInt(8);
 				String MainImage = resultSetObj.getString(9);
 				
-				String UserName = Validate.getUserName(UID);
-				
-				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,MainImage,UserName));
+				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfRooms,Area,MainImage));
 
 			}
 		} catch (Exception e) {
