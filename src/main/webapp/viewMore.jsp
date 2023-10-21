@@ -29,7 +29,6 @@
 <body>
     <%@ include file="includes/header.jsp" %>
     <div style="height:500px">
-    	<%= request.getParameter("propertyID") %>
     </div>
     <%@ include file="includes/footer.jsp" %>
 </body>
