@@ -26,17 +26,6 @@ public class Property {
 	}
 
 
-	public Property(int iD, String propertyName, String address, String description, String price, int rooms, String area, String mainImage ) {
-		ID = iD;
-		PropertyName = propertyName;
-		Address = address;
-		Description = description;
-		this.price = price;
-		this.rooms = rooms;
-		this.area = area;
-		MainImage = mainImage;
-	}
-
 
 	public int getID() {
 		return ID;

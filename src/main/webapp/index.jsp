@@ -3,7 +3,8 @@
 
 <%
 	String userCount = (String) session.getAttribute("UserCount");
-	if (userCount == null){
+	String PropertyCount = (String) session.getAttribute("PropertyCount");
+	if (userCount == null || PropertyCount == null){
 		response.sendRedirect("IndexDetails");
 		return;
 	}
@@ -49,7 +50,7 @@
                     Total Properties Listed
                 </div>
                 <div class="count">
-                    0
+                    <%= PropertyCount %>
                 </div>
             </div>
             <div class="card">

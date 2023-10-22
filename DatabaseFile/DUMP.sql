@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `propertymanagementsystem` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `propertymanagementsystem`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: propertymanagementsystem
@@ -114,6 +112,8 @@ CREATE TABLE `property` (
   `price` varchar(45) DEFAULT NULL,
   `rooms` int(11) DEFAULT NULL,
   `area` varchar(45) DEFAULT NULL,
+  `UserID` int(11) NOT NULL,
+  `mainImageName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,7 +124,7 @@ CREATE TABLE `property` (
 
 LOCK TABLES `property` WRITE;
 /*!40000 ALTER TABLE `property` DISABLE KEYS */;
-INSERT INTO `property` VALUES (1,'Malaka House','No46 , Some Road , Some City','Lorem Ipsum is simply dummy text','1,200,000',10,'1,500'),(2,'Nalaka House','No59 , Some Road , Some City','Lorem Ipsum is simply dummy text','5,500,000',10,'2,500'),(3,'Ruwan House','No12 , Some Road , Some City','Lorem Ipsum is simply dummy text','2,500,000',3,'500'),(4,'Melwin House ','No89/2 , Some Road , Some City','Lorem Ipsum is simply dummy text','1,400,000',4,'600');
+INSERT INTO `property` VALUES (1,'Malaka House','No46 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,200,000',10,'1,500',16,'house-1.png'),(2,'Nalaka House','No59 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','5,500,000',10,'2,500',2,'house-2.png'),(3,'Ruwan House','No12 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','2,500,000',3,'500',16,'house-3.png'),(4,'Melwin House ','No89/2 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,400,000',4,'600',4,'house-4.png');
 /*!40000 ALTER TABLE `property` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-20 18:40:14
+-- Dump completed on 2023-10-22  9:41:47

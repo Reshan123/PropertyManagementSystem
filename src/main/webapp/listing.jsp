@@ -10,7 +10,7 @@
 <html lang="en">
 
 <%
-	List<Property> PropertyList = (List<Property>) request.getAttribute("PropertyList");
+	List<Property> PropertyList = (List<Property>) session.getAttribute("PropertyList");
 	if (PropertyList == null){
 		response.sendRedirect("GetPropertyDetails");
 		return;
