@@ -201,4 +201,34 @@
 		<servlet-name>AdminLogin</servlet-name>
 		<url-pattern>/Admin/AdminLogin</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminSignIn</servlet-name>
+		<servlet-class>com.AdminServlets.AdminSignIn</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminSignIn</servlet-name>
+		<url-pattern>/Admin/AdminSignIn</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminLogout</servlet-name>
+		<servlet-class>com.AdminServlets.AdminLogout</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminLogout</servlet-name>
+		<url-pattern>/Admin/AdminLogout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminPropertDetails</servlet-name>
+		<servlet-class>com.AdminServlets.AdminPropertDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminPropertDetails</servlet-name>
+		<url-pattern>/Admin/AdminPropertDetails</url-pattern>
+	</servlet-mapping>
 </web-app>

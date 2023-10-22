@@ -19,18 +19,37 @@ public class AdminIndex extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String UserCount = "";
+		String PropertyCount = "";
 		Statement statementObj = null;
 		
 		try {
 			
 			statementObj = GetConnection.getConnection();
-			String sql = "SELECT COUNT(*) FROM users";
+			String sqlUser = "SELECT COUNT(*) FROM users";
 			
-			ResultSet resultSetObj = statementObj.executeQuery(sql);
+			ResultSet resultSetObjUser = statementObj.executeQuery(sqlUser);
 			
-			while(resultSetObj.next()) {
+			while(resultSetObjUser.next()) {
 				
-				UserCount = resultSetObj.getString(1);			
+				UserCount = resultSetObjUser.getString(1);			
+			}
+			
+		} catch (Exception e) {
+			
+			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
+			
+		}
+		
+		try {
+			
+			statementObj = GetConnection.getConnection();
+			String sqlProperty = "SELECT COUNT(*) FROM property";
+			
+			ResultSet resultSetObjProperty = statementObj.executeQuery(sqlProperty);
+			
+			while(resultSetObjProperty.next()) {
+				
+				PropertyCount = resultSetObjProperty.getString(1);			
 			}
 			
 		} catch (Exception e) {
@@ -39,6 +58,7 @@ public class AdminIndex extends HttpServlet {
 			
 		}
 		request.setAttribute("UserCount", UserCount);
+		request.setAttribute("PropertyCount", PropertyCount);
 		
 		RequestDispatcher reqDis = request.getRequestDispatcher("adminIndex.jsp");
 		reqDis.forward(request, response);

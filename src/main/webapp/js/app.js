@@ -20,3 +20,11 @@ serviceElements.forEach((el) => observer.observe(el));
 
 const WhatWeDoElements = document.querySelectorAll('.WhatWeDo');
 WhatWeDoElements.forEach((el) => observer.observe(el));
+
+const AboutUsContImgElements = document.querySelectorAll('.AboutUsCont-img');
+AboutUsContImgElements.forEach((el) => observer.observe(el));
+
+const AboutUsContbodyElements = document.querySelectorAll('.AboutUsCont-body');
+AboutUsContbodyElements.forEach((el) => observer.observe(el));
+
+// let section=document

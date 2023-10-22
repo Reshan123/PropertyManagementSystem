@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<% 
-	String userlogged = (String) session.getAttribute("AdminUserLogged");
-	if (userlogged == null){
-		response.sendRedirect("adminLogin.jsp");
-	} 
 
+<%@page import="com.PropertyManagementSystem.*" %>
+<% 
+	AdminUser Adminuser = (AdminUser) session.getAttribute("adminUser");
+	if (Adminuser == null){
+		response.sendRedirect("adminLogin.jsp");
+		return;
+	}
 %>
   
 <nav>
@@ -14,8 +16,9 @@
             <img src="images/logo.png" alt="">
         </div>
         <div class="text">
+        	<%= Adminuser.getUsername() %>
             <img src="images/ProfileIcon.png" alt="">
-            Admin
+            <button onClick="location.href = 'AdminLogout';">Logout</button>
         </div>
     </nav>
 
@@ -30,18 +33,14 @@
                     <img src="images/icon/Legal.png" alt="">
                     All Users
                 </a>
-                <a href="#">
+                <a href="adminProperty.jsp">
                     <img src="images/icon/Legal.png" alt="">
                     Properties
                 </a>
                 <a href="AdminContactDetails">
                     <img src="images/icon/Legal.png" alt="">
                     Contact Details
-                </a>
-                <a href="#">
-                    <img src="images/icon/Legal.png" alt="">
-                    About Details
-                </a>
+                </a>           
                 <div class="feedback">
                 	<img src="images/icon/Legal.png" alt="">
                 	<p>Feedback</p>
