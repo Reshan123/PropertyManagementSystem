@@ -33,7 +33,7 @@
             				<th>Address</th>
             				<th>Description</th>
             				<th>Price</th>
-            				<th>Rooms</th>
+            				<th>Living Space</th>
             				<th>Area</th>
             				<th>By</th>
             			</tr>           			
@@ -44,7 +44,7 @@
             					<td><%= house.getAddress() %></td>
             					<td style="text-align:justify;width:10%"><%= house.getDescription() %></td>
             					<td><%= house.getPrice() %> LKR</td>
-            					<td><%= house.getRooms() %></td>
+            					<td><%= house.getBathrooms() %> Baths <br><%= house.getRooms() %> Rooms <br><%= house.getKitchens() %> Kitchens</td>
             					<td><%= house.getArea() %> Sqft</td>
             					<td><%= house.getUserName() %></td>
             				</tr>

@@ -116,6 +116,60 @@
 		<url-pattern>/GetPropertyDetails</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>CreateProperty</servlet-name>
+		<servlet-class>com.UserServlets.CreateProperty</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateProperty</servlet-name>
+		<url-pattern>/CreateProperty</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetLoggedUserProperty</servlet-name>
+		<servlet-class>com.UserServlets.GetLoggedUserProperty</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetLoggedUserProperty</servlet-name>
+		<url-pattern>/GetLoggedUserProperty</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FeedbackEdit</servlet-name>
+		<servlet-class>com.UserServlets.FeedbackEdit</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>FeedbackEdit</servlet-name>
+		<url-pattern>/FeedbackEdit</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditProperty</servlet-name>
+		<servlet-class>com.UserServlets.EditProperty</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EditProperty</servlet-name>
+		<url-pattern>/EditProperty</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetPropertyFromPID</servlet-name>
+		<servlet-class>com.UserServlets.GetPropertyFromPID</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetPropertyFromPID</servlet-name>
+		<url-pattern>/GetPropertyFromPID</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
 	
 	
 	

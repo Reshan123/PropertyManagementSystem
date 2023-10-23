@@ -7,24 +7,30 @@ public class Property {
 	private String Address;
 	private String Description;
 	private String price;
+	private int bathrooms;
+	private int kitchens;
 	private int rooms;
 	private String area;
 	private String MainImage;
 	private String UserName;
-	
-	public Property(int iD, String propertyName, String address, String description, String price, int rooms,
-			String area, String mainImage, String userName) {
+	private String UserEmail;
+
+
+	public Property(int iD, String propertyName, String address, String description, String price, int bathrooms,
+			int kitchens, int rooms, String area, String mainImage, String userName, String userEmail) {
 		ID = iD;
 		PropertyName = propertyName;
 		Address = address;
 		Description = description;
 		this.price = price;
+		this.bathrooms = bathrooms;
+		this.kitchens = kitchens;
 		this.rooms = rooms;
 		this.area = area;
 		MainImage = mainImage;
 		UserName = userName;
+		UserEmail = userEmail;
 	}
-
 
 
 	public int getID() {
@@ -68,6 +74,19 @@ public class Property {
 
 	public String getUserName() {
 		return UserName;
+	}
+	
+	public String getUserEmail() {
+		return UserEmail;
+	}
+
+	public int getBathrooms() {
+		return bathrooms;
+	}
+
+
+	public int getKitchens() {
+		return kitchens;
 	}
 	
 }

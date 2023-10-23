@@ -8,7 +8,6 @@
 		response.sendRedirect("IndexDetails");
 		return;
 	}
-	System.out.print(userCount);
 %>
 
 <!DOCTYPE html>

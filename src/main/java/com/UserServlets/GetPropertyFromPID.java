@@ -2,34 +2,34 @@ package com.UserServlets;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.PropertyManagementSystem.Property;
-import com.PropertyManagementSystem.User;
-import com.PropertyManagementSystem.GetConnection;
+import com.PropertyManagementSystem.*;
 
-public class GetPropertyDetails extends HttpServlet {
+
+public class GetPropertyFromPID extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List <Property> PropertyList = new ArrayList<Property>();
+		int PID = Integer.parseInt(request.getParameter("PID"));
 		
-		Statement statementObj = null;
+		Property house = null;
+		
+		Statement statementObject = GetConnection.getConnection();
+		String sql = "SELECT * FROM property WHERE ID=" + PID;
+		
 		try {
-			statementObj = GetConnection.getConnection();
-	
-			String sql = "SELECT * FROM property";
-			ResultSet resultSetObj = statementObj.executeQuery(sql);
+			ResultSet resultSetObj = statementObject.executeQuery(sql);
 			
-			while(resultSetObj.next()) {
+			if(resultSetObj.next()) {
 				
 				int PropertyID = resultSetObj.getInt(1);
 				String PropertyName = resultSetObj.getString(2);
@@ -45,17 +45,15 @@ public class GetPropertyDetails extends HttpServlet {
 				
 				User user = Validate.getUserFromID(UID);
 				
-				PropertyList.add(new Property(PropertyID,PropertyName,Address,Description,Price,NoOfBathrooms,NoOfKitchens,NoOfRooms,Area,MainImage,user.getUsername(),user.getEmail()));
-
+				house = new Property(PropertyID,PropertyName,Address,Description,Price,NoOfBathrooms,NoOfKitchens,NoOfRooms,Area,MainImage,user.getUsername(),user.getEmail());
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("PropertyList", PropertyList);
-		
-		response.sendRedirect("listing.jsp");
+		request.setAttribute("editProperty", house);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+		requestDispatcher.forward(request, response);
 		
 	}
 

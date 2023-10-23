@@ -100,7 +100,7 @@
 	        	<div class="contactRight" >
 	                <h1>Send us your Feedback </h1>
 	
-	                <form action="Feedback" method="POST" class="contact_form">
+	                <form action="FeedbackEdit" method="POST" class="contact_form">
 	                    <div class="from_name">
 	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
 	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">

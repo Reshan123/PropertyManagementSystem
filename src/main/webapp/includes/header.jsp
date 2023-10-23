@@ -21,7 +21,8 @@
             <button class="dropbtn">Profile</button>
             <div class="dropdown-content">
                 <a href="preferences.jsp">Preferences</a>
-                <a href="#">My Properties</a>
+                <a href="myProperties.jsp">My Properties</a>
+                <a href="createListing.jsp">Create Listing</a>
                 <a href="Logout" onclick="confirmLogout()">Log Out</a>
             </div>
         </li>

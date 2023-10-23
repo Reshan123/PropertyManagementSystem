@@ -83,7 +83,7 @@ public class Validate {
 		return null;
 	}
 	
-	public static String getUserName(int UID) {
+	public static User getUserFromID(int UID) {
 		
 		try {
 			
@@ -93,8 +93,13 @@ public class Validate {
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
 			
 			if(resultSetObj.next()) {
+				int uid = resultSetObj.getInt(1);
 				String uname = resultSetObj.getString(2);
-				return uname;
+				String uemail = resultSetObj.getString(3);
+				String upass = resultSetObj.getString(4);
+				
+				User user = new User(uid,uname,uemail,upass);
+				return user;
 			}
 			
 			

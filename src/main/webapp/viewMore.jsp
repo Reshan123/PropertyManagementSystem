@@ -121,11 +121,11 @@
 		                        </div>
 		                        <div class="moreInfo-box">
 		                            <img src="images/bathroom.png" class="viewMore-icons">
-		                            <p>5 Bathrooms</p>
+		                            <p><%= house.getBathrooms() %> Bathrooms</p>
 		                        </div>
 		                        <div class="moreInfo-box">
 		                            <img src="images/measurement.png" class="viewMore-icons">
-		                            <p>5 Kitchens</p>
+		                            <p><%= house.getKitchens() %> Kitchens</p>
 		                        </div>
 		
 		                    </div>
@@ -159,11 +159,11 @@
 		
 		                        <div class="contactSeller">
 		                            <img src="images/phone.png" class="viewMore-icons">
-		                            <p>07x-x-xxx-xxx</p>	                  
+		                            <p>077-458-7895</p>	                  
 		                        </div>
 		                        <div class="contactSeller">
 		                            <img src="images/phone.png" class="viewMore-icons">
-		                            <p>Email@email.com</p>	                  
+		                            <p><%= house.getUserEmail() %></p>	                  
 		                        </div>
 		
 		                    </div>
