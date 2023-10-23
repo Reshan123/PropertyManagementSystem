@@ -7,7 +7,7 @@
 
     <ul>
         <li class="navItem"><a href="IndexDetails">Home</a> </li>
-        <li class="navItem"><a href="#">About</a> </li>
+        <li class="navItem"><a href="#AboutUs">About</a> </li>
         <li class="navItem"><a href="Contact">Contact</a> </li>
         <li class="navItem"><a href="GetPropertyDetails">Properties</a> </li>
         <% 

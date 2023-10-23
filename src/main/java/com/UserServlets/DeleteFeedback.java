@@ -14,10 +14,11 @@ import com.PropertyManagementSystem.GetConnection;
 public class DeleteFeedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int UID = Integer.parseInt(request.getParameter("UserID"));
 		Statement statementObj = null;
+		System.out.print(UID);
 		
 		try {
 			

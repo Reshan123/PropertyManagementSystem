@@ -108,11 +108,12 @@
 	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" value="<%= feedback.getEmail() %>">
 	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"><%= feedback.getMessage() %></textarea>
 	                    <input type="text" name="UID" required style="display:none;" value="<%= feedback.getUID() %>">
-	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
-	                </form>
-	                <form method="post" action="DeleteFeedback">
-						<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
-					</form>
+	                    <div style="display:flex">
+	                    	<button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
+							<div class="btn btn-primary" onClick="window.location.href='DeleteFeedback?UserID=<%= user.getUID() %>'" >DELETE</div>
+	                    </div>
+	                </form>	          
+				
 	
 	            </div>
 			<% } %>

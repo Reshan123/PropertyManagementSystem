@@ -37,8 +37,8 @@
             <br><br><br>Join the Journey Towards Your Property Goals Today!.
         </p>
         <div>
-            <button type="button" class="index-btn"><span></span>Get Started</button>
-            <button type="button" class="index-btn"><span></span>View Listing</button>
+            <button type="button" class="index-btn" onClick="window.location.href='login.jsp'"><span></span>Get Started</button>
+            <button type="button" class="index-btn" onClick="window.location.href='GetPropertyDetails'"><span></span>View Listing</button>
         </div>
     </div>
 
