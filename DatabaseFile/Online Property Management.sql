@@ -18,6 +18,32 @@ USE `propertymanagementsystem`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admins` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES (1,'ReshanAdmin','reshangomis@gmail.com','pass');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `contact`
 --
 
@@ -59,7 +85,7 @@ CREATE TABLE `feedbackreg` (
   `Message` longtext DEFAULT NULL,
   `UID` int(11) DEFAULT NULL,
   PRIMARY KEY (`FID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +94,7 @@ CREATE TABLE `feedbackreg` (
 
 LOCK TABLES `feedbackreg` WRITE;
 /*!40000 ALTER TABLE `feedbackreg` DISABLE KEYS */;
-INSERT INTO `feedbackreg` VALUES (5,'Reshan','Gomis','reshan@mail.com','  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  ',16);
+INSERT INTO `feedbackreg` VALUES (5,'Reshan','Gomis','reshan@mail.com','  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  ',16);
 /*!40000 ALTER TABLE `feedbackreg` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,12 +138,14 @@ CREATE TABLE `property` (
   `address` varchar(255) DEFAULT NULL,
   `description` longtext DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,
+  `bathroom` int(11) DEFAULT NULL,
+  `kitchen` int(11) DEFAULT NULL,
   `rooms` int(11) DEFAULT NULL,
   `area` varchar(45) DEFAULT NULL,
   `UserID` int(11) NOT NULL,
   `mainImageName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +154,7 @@ CREATE TABLE `property` (
 
 LOCK TABLES `property` WRITE;
 /*!40000 ALTER TABLE `property` DISABLE KEYS */;
-INSERT INTO `property` VALUES (1,'Malaka House','No46 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,200,000',10,'1,500',16,'house-1.png'),(2,'Nalaka House','No59 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','5,500,000',10,'2,500',2,'house-2.png'),(3,'Ruwan House','No12 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','2,500,000',3,'500',16,'house-3.png'),(4,'Melwin House ','No89/2 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,400,000',4,'600',4,'house-4.png');
+INSERT INTO `property` VALUES (1,'Malaka House','No46 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,200,000',2,1,10,'1,500',16,'house-1.png'),(2,'Nalaka House','No59 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','5,500,000',3,2,10,'2,500',2,'house-2.png'),(3,'Ruwan House','No12 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','2,500,000',4,3,3,'500',16,'house-3.png'),(4,'Melwin House ','No89/2 , Some Road , Some City','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ','1,400,000',2,4,4,'600',4,'house-4.png'),(5,'Title','Adresss eihgoiwe iewohgoiwehg giwe','loeroerwen ew roweh rwe hrwoie hwe wehroiwe hoie howeonfnemw fweifiowehfef iwoefhweio hweofbwefwefmefweifh ewoifh ewihf wuielfzbfeubfwe foi hwoiefhwei','15,000,000',2,2,4,'2500',16,'house-5.png');
 /*!40000 ALTER TABLE `property` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-22 10:03:25
+-- Dump completed on 2023-10-23 19:27:31
