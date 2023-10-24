@@ -51,7 +51,7 @@ public class GetFeedback extends HttpServlet {
 		
 		request.setAttribute("feedback", feedback);
 		
-		RequestDispatcher reqDis = request.getRequestDispatcher("contact.jsp");
+		RequestDispatcher reqDis = request.getRequestDispatcher("feedback.jsp");
 		reqDis.forward(request, response);
 		
 	}

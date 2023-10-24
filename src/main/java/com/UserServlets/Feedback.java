@@ -46,7 +46,7 @@ public class Feedback extends HttpServlet {
 			
 		}
 		
-		response.sendRedirect("Contact");
+		response.sendRedirect("feedback.jsp");
 		
 	}
 

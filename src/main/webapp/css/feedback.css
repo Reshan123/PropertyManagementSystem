@@ -5,9 +5,7 @@ body {
     background-color: var(--color-grey);
 
 }
-.contact p{
-    color: #fff;
-}
+
 :root {
     --color-primary: #ffd24d;
     --color-white: #1f1f1f;
@@ -31,17 +29,13 @@ body {
     box-sizing: border-box;
 }
 
-.container {
-    width: var(--container-width-lg);
-    margin: 0 auto;
-
-}
-
-.contact img {
-    
-    width: 180%;
+.aside_image img {
+    margin: auto;
+    width: 100%;
     display: block;
     object-fit: cover;
+    position: absolute;
+    left:0px;
 }
 
 section {
@@ -55,6 +49,8 @@ section h2 {
 }
 
 .contact_container {
+    
+    width: var(--container-width-lg);
     background: var(--color-bg1);
     color: var(--color-white);
     padding: 4rem;
@@ -62,7 +58,8 @@ section h2 {
     grid-template-columns: 40% 60%;
     gap: 4rem;
     height: 30rem;
-    margin: 8rem auto;
+    margin: 0 auto;
+    margin-top: 3.5rem;
     border-radius: 1rem;
 
     -webkit-border-radius: 1rem;
@@ -74,14 +71,15 @@ section h2 {
 /* =================ASIDE============== */
 
 .contact_aside {
-    display: flex;
-    align-items: center;
     background: var(--color-primary);
-    border-radius: 15px;
+    padding: 3rem;
+    border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    position: relative;
+    bottom:2rem;
 
 }
 
@@ -214,3 +212,4 @@ a {
 ::placeholder {
     color:  #F3F4F9;
 }
+
