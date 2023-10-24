@@ -9,6 +9,10 @@
 <%
 	List<User> UserList = new ArrayList<User>();
 	UserList = (List<User>) request.getAttribute("UserList");
+	if (UserList == null){
+		response.sendRedirect("AdminUserDetails");
+		return;
+	}
 %>
 
 <!DOCTYPE html>
@@ -41,7 +45,12 @@
 								<td><%= user.getUID() %></td>
 								<td><%= user.getUsername() %></td>
 								<td><%= user.getEmail() %></td>
-								<td><form method="post" action="DeleteUser"><button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button><button>Something Else</button></form></td>					
+								<td>
+									<form method="post" action="DeleteUser">
+										<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
+										<button>Something Else</button>
+									</form>
+								</td>					
 							</tr>
 						<% } %>
 					</table>

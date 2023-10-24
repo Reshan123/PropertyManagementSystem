@@ -17,10 +17,6 @@ import com.PropertyManagementSystem.User;
 
 public class AdminUserDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-	static String url = "jdbc:mysql://localhost:3306/propertymanagementsystem";
-	static String DBusername = "root";
-	static String DBpassword = "";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

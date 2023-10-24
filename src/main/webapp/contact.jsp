@@ -77,7 +77,7 @@
 	                    </div>
 	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;">
 	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
-	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Massage</button>
+	                    <button type="submit" name="send" id="name " class="btn btn-primary">Send Message</button>
 	                </form>
 	
 	            </div>

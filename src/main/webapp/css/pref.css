@@ -88,3 +88,10 @@ body {
 .prefUserInfo img{
     width:50%
 }
+
+.prefDlt:hover{
+	color: black;
+	border: none;
+	//background-color: red;
+	
+}

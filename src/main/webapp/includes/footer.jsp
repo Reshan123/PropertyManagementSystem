@@ -16,7 +16,7 @@
     </ul>
     <div class="footerText">
         <p>
-            Ayathma is hot AF | All Rights Reserved
+            Property Management | All Rights Reserved
         </p>
     </div>
 

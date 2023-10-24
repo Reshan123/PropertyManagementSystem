@@ -21,7 +21,7 @@ public class AdminIndex extends HttpServlet {
 		String UserCount = "";
 		String PropertyCount = "";
 		Statement statementObj = null;
-		
+		//Usercount
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -39,7 +39,7 @@ public class AdminIndex extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-		
+		//popertycount
 		try {
 			
 			statementObj = GetConnection.getConnection();

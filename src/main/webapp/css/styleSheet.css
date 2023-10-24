@@ -45,12 +45,11 @@ html,body {
 
 }
 
-.header h1 {
-    /* margin-top: 100px */
+.header .tagline h1 {
     font-family: 'Madeleina Sans', sans-serif;
     font-size: 50px;
     letter-spacing: -1px;
-    margin-bottom: -20px;
+    margin-bottom: 0px;
 
 }
 

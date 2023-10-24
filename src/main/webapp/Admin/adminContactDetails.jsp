@@ -26,7 +26,7 @@
 				<div class="CardContainer">
 					<div class="welcomeText">
 	                    <h1>Contact Details</h1>
-	                    <p>Edit Contacr Details</p>
+	                    <p>Edit Contact Details</p>
 	                </div>
 					<form method="get" action="UpdateContactDetails">
 						<span>Description : </span><textarea name="description" rows="10"><%= contact.getDescription() %></textarea><br/>

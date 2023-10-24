@@ -37,10 +37,10 @@
                 </div>
 
                 <div class="otherInfo">
-                    <h2>Thanks to Us</h2>
-                    <p>ur sorry-ass has another chance to fix your uglyass name</p>
+                    <h2>Edit your Profile</h2>
+                    <p>Change your user name, email or renew your password!</p>
                     <form method="post" action="DeleteProfile">
-						<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
+						<button style="border:red solid 3px;color:red;" class="prefDlt"  name="UserID" value=<%= user.getUID() %>>DELETE</button>
 					</form>
                 </div>
             </div>
