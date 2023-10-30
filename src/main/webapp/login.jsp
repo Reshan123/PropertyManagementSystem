@@ -46,7 +46,7 @@
     </div>
 
     <div class="input-box">
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="passwordInput" onChange="passwordLengthCheck()" id="password" name="password" required>
       <label>Password</label>
     </div>
 
@@ -71,7 +71,7 @@
 
 <%@ include file="includes/footer.jsp" %>
 
-
+<script src="js/app.js"></script>
 </body>
 </html>
 

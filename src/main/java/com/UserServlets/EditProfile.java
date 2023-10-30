@@ -13,10 +13,11 @@ public class EditProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//get session from request 
 		HttpSession session = request.getSession();
+		//get user session from session
 		User user = (User) session.getAttribute("user");
-		
+		//get all inputs from the preferences page
 		int UID = user.getUID();
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
@@ -24,14 +25,16 @@ public class EditProfile extends HttpServlet {
 		String pwdSession = user.getPassword();
 		User NewUser;
 		
+		//checking if they have updated the password and executing the required sql statement
 		if (newPassword == null) {
 			NewUser = Validate.update(UID, username, pwdSession , email);
 		} else {
 			NewUser = Validate.update(UID, username, newPassword, email);
 		}
 		
-		
+		//setting the updated user session
 		session.setAttribute("user", NewUser);
+		//redirect to preferences jsp page
 		response.sendRedirect("preferences.jsp");
 		
 	}

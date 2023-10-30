@@ -18,10 +18,11 @@ public class AdminIndex extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// get user and property count
 		String UserCount = "";
 		String PropertyCount = "";
 		Statement statementObj = null;
-		//Usercount
+		// get connection and execute the sql statements and assign them to usercount and propertycount
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -57,9 +58,11 @@ public class AdminIndex extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
+		//set user count and property count in the request objects
 		request.setAttribute("UserCount", UserCount);
 		request.setAttribute("PropertyCount", PropertyCount);
 		
+		//redirect to admin index jsp
 		RequestDispatcher reqDis = request.getRequestDispatcher("adminIndex.jsp");
 		reqDis.forward(request, response);
 		

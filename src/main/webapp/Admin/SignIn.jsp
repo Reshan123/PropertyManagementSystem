@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Sign In</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/adminlogin.css">
     <link rel="stylesheet" href="../css/styleSheet.css">
@@ -25,7 +25,7 @@
                       	<label>Email</label>
                     </div>
                     <div class="input-box">
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="passwordInput" onChange="passwordLengthCheck()" id="password" name="password" required>
                         <label>Password</label>
                     </div>
 
@@ -35,5 +35,6 @@
         </div>
 
     </section>
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -12,10 +12,13 @@ public class Logout extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//get session from request
 		HttpSession session = request.getSession();
 		
+		// if the user session is set and making all sessions invalid
 		if (session.getAttribute("user") != null) {
 		   	session.invalidate();
+		   	//redirect to index jsp
 		    response.sendRedirect("index.jsp");
 		    
 		}

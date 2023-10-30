@@ -20,12 +20,17 @@ public class GetFeedback extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//get session object from request object in the servlet
 		HttpSession session = request.getSession();
+		
+		//get user session from sessions
 		User user = (User) session.getAttribute("user");
 		Statement statementObj = null;
 		
-		FeedbackDetails feedback = new FeedbackDetails("","","","",user.getUID());
+		//create feedback details object
+		FeedbackDetails feedback = null;
 		
+		//execute the sql statement 
 		try {
 			statementObj = GetConnection.getConnection();
 			String sql = "SELECT * FROM feedbackreg WHERE UID =" + user.getUID();
@@ -49,9 +54,12 @@ public class GetFeedback extends HttpServlet {
 			
 		}
 		
+		//set feedback object to the request object of the servlet
 		request.setAttribute("feedback", feedback);
 		
+		//redirect to feedback jsp
 		RequestDispatcher reqDis = request.getRequestDispatcher("feedback.jsp");
+		//redirect with the request and response objects of the current servlet
 		reqDis.forward(request, response);
 		
 	}

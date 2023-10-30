@@ -15,11 +15,10 @@ public class DeleteFeedback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//get user if from the feedback page
 		int UID = Integer.parseInt(request.getParameter("UserID"));
 		Statement statementObj = null;
-		System.out.print(UID);
-		
+		//get connection and execute the sql
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -33,7 +32,7 @@ public class DeleteFeedback extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-		
+		//redirect to contact page
 		response.sendRedirect("contact.jsp");
 		
 	}

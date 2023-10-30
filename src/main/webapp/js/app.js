@@ -27,4 +27,13 @@ AboutUsContImgElements.forEach((el) => observer.observe(el));
 const AboutUsContbodyElements = document.querySelectorAll('.AboutUsCont-body');
 AboutUsContbodyElements.forEach((el) => observer.observe(el));
 
-// let section=document
+
+const passwordInput = document.getElementById("passwordInput");
+
+function passwordLengthCheck(){
+	if(passwordInput.value.length<=7){
+		passwordInput.style.background = "red";
+	} else {
+		passwordInput.style.background = "transparent";
+	}
+}

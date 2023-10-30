@@ -9,8 +9,10 @@ import com.PropertyManagementSystem.User;
 
 public class Validate {
 	
+	// Login user method
 	public static User login(String email , String password) {
 	
+		// get connection for database and execting and making user object
 		try {
 			
 			Statement statementObj = GetConnection.getConnection();
@@ -25,6 +27,7 @@ public class Validate {
 				String upass = resultSetObj.getString(4);
 				
 				User user = new User(uid,uname,uemail,upass);
+				//return the object
 				return user;
 			}
 			
@@ -39,9 +42,10 @@ public class Validate {
 		return null;		
 		
 	}
-
+	
+	// Sigin user method
 	public static User signin(String username , String password , String email) {
-		
+		//getting database connection and execting the insert sql  
 		try {
 			
 			Statement statementObj = GetConnection.getConnection();
@@ -50,6 +54,7 @@ public class Validate {
 			statementObj.execute(sql);
 			
 			User user = login(email , password);
+			//return user object
 			return user;
 			
 		} catch (SQLException e) {
@@ -62,8 +67,10 @@ public class Validate {
 		
 	}
 	
+	//  user update method
 	public static User update(int UID ,String username , String password , String email) {
 		
+		// get database connection and execting update 
 		try {
 			
 			Statement statementObj = GetConnection.getConnection();
@@ -72,6 +79,7 @@ public class Validate {
 			statementObj.execute(sql);
 			
 			User user = login(email , password);
+			//return user object
 			return user;
 			
 		} catch (SQLException e) {
@@ -83,8 +91,10 @@ public class Validate {
 		return null;
 	}
 	
+	//get user object from the ID
 	public static User getUserFromID(int UID) {
 		
+		//database connection and selecting user details from the UID
 		try {
 			
 			Statement statementObj = GetConnection.getConnection();
@@ -98,6 +108,7 @@ public class Validate {
 				String uemail = resultSetObj.getString(3);
 				String upass = resultSetObj.getString(4);
 				
+				//create user object and return it
 				User user = new User(uid,uname,uemail,upass);
 				return user;
 			}

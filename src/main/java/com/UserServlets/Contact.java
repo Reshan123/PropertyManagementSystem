@@ -22,12 +22,12 @@ public class Contact extends HttpServlet {
 		Statement statementObj = null;
 		
 		try {
-			
+			// get connection
 			statementObj = GetConnection.getConnection();
 			String sql = "SELECT * FROM contact";
-			
+			//run sql command
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
-			
+			// get the results and add to contact objext
 			if(resultSetObj.next()) {
 				int ContactID = resultSetObj.getInt(1);
 				String Description = resultSetObj.getString(2);
@@ -44,8 +44,11 @@ public class Contact extends HttpServlet {
 			
 		}
 		
+		// get session from from request
 		HttpSession session = request.getSession();
+		//setting contact object session
 		session.setAttribute("contact", contact);
+		//redirect to contact.jsp page
 		response.sendRedirect("contact.jsp");
 		
 	}

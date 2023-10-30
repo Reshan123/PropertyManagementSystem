@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="input-box">
-                    <input type="password" id="passwordS" name="password" required>
+                    <input type="password" id="passwordInput" onChange="passwordLengthCheck()" id="passwordS" name="password" required>
                     <label>Password</label>
                 </div>
 
@@ -46,9 +46,9 @@
                 </div>
 
                 <button name="sign" id="sign" class="logBtn">Sign Up</button>
+       		</form>
         </div>
 
-        </form>
 
         </div>
     </section>
@@ -56,6 +56,7 @@
 
     <%@ include file="includes/footer.jsp" %>
 	<script src="js/confirmPassword.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 </html>

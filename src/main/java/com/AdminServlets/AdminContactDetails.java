@@ -17,10 +17,12 @@ public class AdminContactDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-		
+		//create contact object
 		ContactDetails contact = null;
 	
 		Statement statementObj = null;
+		
+		//getting contactt details from the contact table
 		try {
 			statementObj = GetConnection.getConnection();
 			String sql = "SELECT * FROM contact";
@@ -39,8 +41,10 @@ public class AdminContactDetails extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//setting attribute to request object of contact
 		request.setAttribute("AdminContactDetails", contact);
 		
+		//redirect admin contact details jsp
 		RequestDispatcher reqDis = request.getRequestDispatcher("adminContactDetails.jsp");
 		reqDis.forward(request, response);
 	}

@@ -45,6 +45,9 @@
 	                        	<form method="post" action="viewMore.jsp">
 	                        		<button type="submit" name="propertyID" value=<%= house.getID() %> id="name" class="buttonListing">View More</button>
 		                        </form>
+		                        <form method="post" action="DeleteProperty">
+	                        		<button type="submit" name="propertyID" value=<%= house.getID() %> id="name" class="buttonListing">Delete</button>
+		                        </form>
 		                        <button type="submit" id="name" class="buttonListing" onclick="location.href = 'EditProperty?PID=<%= house.getID() %>';">Edit</button>
 	                        </div>
 	                        <h4><%= house.getPrice() %> LKR</h4>

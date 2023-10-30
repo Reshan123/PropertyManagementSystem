@@ -15,9 +15,12 @@ public class AdminDeleteUser extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		// getting user id from delete user ID
 		int UID = Integer.parseInt(request.getParameter("UserID"));
 		Statement statementObj = null;
 		
+		// execute the sql statement
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -31,7 +34,7 @@ public class AdminDeleteUser extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-		
+		// redirect to admin user details servlet
 		response.sendRedirect("AdminUserDetails");
 		
 	}

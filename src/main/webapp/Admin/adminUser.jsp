@@ -47,7 +47,7 @@
 								<td><%= user.getEmail() %></td>
 								<td>
 									<form method="post" action="DeleteUser">
-										<button style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
+										<button onClick="alert('User Deleted'')" style="border:red solid 3px;color:red;" name="UserID" value=<%= user.getUID() %>>DELETE</button>
 									</form>
 								</td>					
 							</tr>

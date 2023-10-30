@@ -16,17 +16,20 @@ public class Feedback extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// get all the inputs from the feedback jsp
 		String firstName = request.getParameter("fName");
 		String lastName = request.getParameter("lName");
 		String Email = request.getParameter("Email");
 		String message = request.getParameter("message");
 		Integer UID = null;
+		
+		//get UID if it is set
 		if (request.getParameter("UID") != null) {
 			UID = Integer.parseInt(request.getParameter("UID"));
 		}
 		
 		Statement statementObj = null;
-		
+		//get connection and execute the required the sql if the user id is set
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -45,8 +48,8 @@ public class Feedback extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-		
-		response.sendRedirect("feedback.jsp");
+		//redirect to feedback jsp
+		response.sendRedirect("GetFeedback");
 		
 	}
 

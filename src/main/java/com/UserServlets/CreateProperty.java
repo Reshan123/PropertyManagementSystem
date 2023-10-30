@@ -17,10 +17,11 @@ public class CreateProperty extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// get session from request
 		HttpSession session = request.getSession();
+		// get user session from session
 		User user = (User) session.getAttribute("user");
-		
+		// get all inputs from the inputs of the createlisting.jsp
 		String PropertyName = request.getParameter("Title");
 		String Address = request.getParameter("Address");
 		String Description = request.getParameter("Description");
@@ -30,15 +31,16 @@ public class CreateProperty extends HttpServlet {
 		int Bathrooms = Integer.parseInt(request.getParameter("Bathrooms"));
 		int Kitchens = Integer.parseInt(request.getParameter("Kitchens"));
 		
-		
+		//get connection
 		Statement statementObject = GetConnection.getConnection();
 		String sql = "INSERT INTO `propertymanagementsystem`.`property` (`propertyName`, `address`, `description`, `price`, `bathroom`, `kitchen`, `rooms`, `area`, `UserID`, `mainImageName`) VALUES ( '"+PropertyName+"', '"+Address+"', '"+Description+"', '"+Price+"', "+Bathrooms+", "+Kitchens+", "+Bedrooms+", "+HouseSize+", "+user.getUID()+", 'house-5.png')";
-		
+		//execute the sql
 		try {
 			statementObject.execute(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		//redirect to getpropertydetails servlet
 		response.sendRedirect("GetPropertyDetails");
 		return;
 	}

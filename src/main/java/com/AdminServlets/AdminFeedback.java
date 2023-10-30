@@ -19,9 +19,11 @@ public class AdminFeedback extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//creating a list of feedback objects
 		List<FeedbackDetails> feedbackList = new ArrayList<FeedbackDetails>();
 		Statement statementObj = null;
 		
+		// getting connection and execute the sql and adding feedback objects to the list
 		try {
 			
 			statementObj = GetConnection.getConnection();
@@ -48,8 +50,10 @@ public class AdminFeedback extends HttpServlet {
 			
 		}
 		
+		//setting the list of feedback in the request object
 		request.setAttribute("FeedbackList", feedbackList);
 		
+		// redirect to feedback jsp page
 		RequestDispatcher reqDis = request.getRequestDispatcher("adminFeedback.jsp");
 		reqDis.forward(request, response);
 		

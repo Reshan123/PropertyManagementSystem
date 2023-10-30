@@ -166,6 +166,16 @@
 		<url-pattern>/GetPropertyFromPID</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>UpdateProperty</servlet-name>
+		<servlet-class>com.UserServlets.UpdateProperty</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateProperty</servlet-name>
+		<url-pattern>/UpdateProperty</url-pattern>
+	</servlet-mapping>
+	
 	
 	
 	

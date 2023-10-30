@@ -19,13 +19,16 @@ public class GetPropertyFromPID extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// get property id from the property page
 		int PID = Integer.parseInt(request.getParameter("PID"));
 		
 		Property house = null;
 		
+		// get database connection
 		Statement statementObject = GetConnection.getConnection();
 		String sql = "SELECT * FROM property WHERE ID=" + PID;
 		
+		// execute the sql and add those to property object
 		try {
 			ResultSet resultSetObj = statementObject.executeQuery(sql);
 			
@@ -51,7 +54,10 @@ public class GetPropertyFromPID extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		// set the property object to request object of the servlets
 		request.setAttribute("editProperty", house);
+		
+		//
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
 		requestDispatcher.forward(request, response);
 		

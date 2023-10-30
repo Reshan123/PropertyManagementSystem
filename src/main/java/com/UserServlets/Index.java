@@ -17,10 +17,12 @@ public class Index extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//set variable for user count and property count
 		String UserCount = "";
 		String PropertyCount = "";
 		Statement statementObj = null;
 		
+		//execute sql statement and getting user count and property count
 		try {
 			statementObj = GetConnection.getConnection();
 			String sqlUserCount = "SELECT COUNT(*) FROM users";
@@ -47,10 +49,12 @@ public class Index extends HttpServlet {
 			System.out.println("Something wrong with Connecting to SQL server " + e.getMessage());
 			
 		}
-
+		
+		//getting session from request
 		HttpSession session = request.getSession();
 		session.setAttribute("UserCount", UserCount);
 		session.setAttribute("PropertyCount", PropertyCount);
+		//redirect index jsp 
 		response.sendRedirect("index.jsp");
 		
 		

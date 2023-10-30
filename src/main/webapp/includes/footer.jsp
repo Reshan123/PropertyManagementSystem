@@ -12,7 +12,7 @@
     <ul class="menu">
         <li><a href="IndexDetails">Home</a> </li>
         <li><a href="contact.jsp">Contact</a> </li>
-        <li><a href="feedback.jsp">Feedback</a> </li>
+        <li><a href="GetFeedback">Feedback</a> </li>
     </ul>
     <div class="footerText">
         <p>

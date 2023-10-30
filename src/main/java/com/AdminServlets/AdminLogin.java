@@ -18,15 +18,21 @@ public class AdminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// getting user and password of the admin from the login page
 		String email = (String) request.getParameter("email");
 		String password = (String) request.getParameter("password");
 		
+		//getting session
 		HttpSession session = request.getSession();
 		AdminUser user = null;
 		
+		//getting connectiong
 		Statement statementObject = GetConnection.getConnection();
 		String sql = "SELECT * FROM admins WHERE email='"+email+"' AND password='"+password+"'";
 		ResultSet resultSetObj;
+		
+		//executing the sql statement
 		try {
 			resultSetObj = statementObject.executeQuery(sql);
 			if(resultSetObj.next()) {
@@ -45,8 +51,9 @@ public class AdminLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//setting session admin user 
 		session.setAttribute("adminUser", user);
-		
+		//redirect to admin index jsp
 		response.sendRedirect("AdminIndex");
 	}
 

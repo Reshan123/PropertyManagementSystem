@@ -22,14 +22,18 @@ public class GetLoggedUserProperty extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//get session from request object of servlet
 		HttpSession session = request.getSession();
+		//get user session from the sessions
 		User userSession = (User) session.getAttribute("user");
 		
+		//getting database connectiong 
 		Statement statementObject = GetConnection.getConnection();
 		String sql="SELECT * FROM property WHERE UserID =" + userSession.getUID();
-		
+		//create a list to store all the property objects
 		List<Property> PropertyList = new ArrayList<>();
 		
+		//execute the sql statement details and create objects and add the object to the list
 		try {
 			ResultSet resultSetObject = statementObject.executeQuery(sql);
 			while (resultSetObject.next()) {
@@ -39,8 +43,10 @@ public class GetLoggedUserProperty extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		//setting property list to the request object
 		request.setAttribute("LoggedInUserPropertyList", PropertyList);
+		
+		//redirect my properties jsp
 		RequestDispatcher ReqDispatcher = request.getRequestDispatcher("myProperties.jsp");
 		ReqDispatcher.forward(request, response);
 		

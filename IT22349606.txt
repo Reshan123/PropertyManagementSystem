@@ -1,0 +1,21 @@
+Servlet Files - 
+
+	com.UserServlets.CreateProperty.java
+	com.UserServlets.DeleteProperty.java
+	com.UserServlets.EditProperty.java
+	com.UserServlets.GetPropertyDetails.java
+	com.UserServlets.GetPropertyFromPID.java
+	com.UserServlets.UpdateProperty.java
+
+
+Java Class Files - 
+
+	Property.java
+
+
+JSP Files - 
+
+	createListing.jsp
+	listing.jsp
+	myProperties.jsp
+	viewMore.jsp

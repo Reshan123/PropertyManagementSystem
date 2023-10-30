@@ -20,15 +20,17 @@ public class GetPropertyDetails extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// create a list to store property objects
 		List <Property> PropertyList = new ArrayList<Property>();
 		
 		Statement statementObj = null;
 		try {
+			//getting database connection
 			statementObj = GetConnection.getConnection();
-	
+			//excute sql statement
 			String sql = "SELECT * FROM property";
 			ResultSet resultSetObj = statementObj.executeQuery(sql);
-			
+			//get all the property details and add to the list
 			while(resultSetObj.next()) {
 				
 				int PropertyID = resultSetObj.getInt(1);
@@ -51,10 +53,11 @@ public class GetPropertyDetails extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		//getting session and setting property list to a session 
 		HttpSession session = request.getSession();
 		session.setAttribute("PropertyList", PropertyList);
 		
+		//redirect to listing jsp
 		response.sendRedirect("listing.jsp");
 		
 	}

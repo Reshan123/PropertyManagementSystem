@@ -9,12 +9,7 @@
 <%
 	User userProfile = (User) session.getAttribute("user");
 	FeedbackDetails feedback =  (FeedbackDetails) request.getAttribute("feedback");
-	if ( userProfile != null){
-		if ( feedback == null){
-			response.sendRedirect("GetFeedback");
-			return;
-		}
-	}
+	
 %>
 
 <!DOCTYPE html>
@@ -52,8 +47,8 @@
 	
 	                <form action="Feedback" method="POST" class="contact_form">
 	                    <div class="from_name">
-	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;">
-	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;">
+	                        <input type="text" id="fname" onChange="fnameValidate()" name="fName" placeholder="First Name" required style="color:white;">
+	                        <input type="text" id="lname" onChange="lnameValidate()" name="lName" placeholder="Last Name" required style="color:white;">
 	                    </div>
 	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;">
 	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
@@ -61,29 +56,29 @@
 	                </form>
 	
 	            </div>
-	        <% } else if (userProfile != null && feedback.getFname()== "") { %>
+	        <% } else if (userProfile != null && feedback == null) { %>
 	       		<div class="contactRight" >
 	                <h1>Send us your Feedback </h1>
 	
 	                <form action="Feedback" method="POST" class="contact_form">
 	                    <div class="from_name">
-	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
-	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">
+	                        <input type="text" id="fname" onChange="fnameValidate()" name="fName" id="fName" placeholder="First Name" required style="color:white;" >
+	                        <input type="text" id="lname" onChange="lnameValidate()" name="lName" id="lName" placeholder="Last Name" required style="color:white;">
 	                    </div>
-	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" value="<%= feedback.getEmail() %>">
-	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"><%= feedback.getMessage() %></textarea>
-	                    <input type="text" name="UID" required style="display:none;" value="<%= feedback.getUID() %>">
+	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" >
+	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"></textarea>
+	                    <input type="text" name="UID" required style="display:none;" value="<%= userProfile.getUID() %>">
 	                    <button type="submit" name="send" id="name " class="btn btn-primary" onClick="alert('Feedback Submitted')">Send Massage</button>
 	                </form>       
 	            </div>
-	        <% } else { %>
+	        <% } else if (userProfile != null && feedback != null) { %>
 	        	<div class="contactRight" >
 	                <h1>Send us your Feedback </h1>
 	
 	                <form action="FeedbackEdit" method="POST" class="contact_form">
 	                    <div class="from_name">
-	                        <input type="text" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
-	                        <input type="text" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">
+	                        <input type="text" id="fname" onChange="fnameValidate()" name="fName" id="fName" placeholder="First Name" required style="color:white;" value="<%= feedback.getFname() %>">
+	                        <input type="text" id="lname" onChange="lnameValidate()" name="lName" id="lName" placeholder="Last Name" required style="color:white;" value="<%= feedback.getLname() %>">
 	                    </div>
 	                    <input type="email" name="Email" placeholder="Your Eamil Adress" required style="color:white;" value="<%= feedback.getEmail() %>">
 	                    <textarea rows="5" cols="10" name="message" id="message" placeholder="Message" required style="color:white;"><%= feedback.getMessage() %></textarea>
@@ -103,6 +98,26 @@
 
 
     <%@ include file="includes/footer.jsp" %>
+    
+    <script>
+		let fname = document.getElementById("fname");
+		function fnameValidate(){
+			if (isNaN(fname.value)){
+				fname.style.background = "#4e4e4e";
+			} else {
+				fname.style.background = "red";
+			}
+		}
+		
+		let lname = document.getElementById("lname");
+		function lnameValidate(){
+			if (isNan(lname.value)){
+				lname.style.background = "#4e4e4e";
+			} else {
+				lname.style.background = "red";
+			}
+		}
+	</script>
 
 
 
